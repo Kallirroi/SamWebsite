@@ -15,22 +15,30 @@ class App extends Component {
 
   componentDidMount() {
     // ID of the Google Spreadsheet
-    let spreadsheetID = "1pTiFvBhlodR067hZZ3en48tt4EahDShWK6PIGVRKcC8";
+    let spreadsheetID = "1f-VK6GAJciN5-p4uCWMUllY9_6HRgnr8yoQBv8AaoT4";
     var _this = this;
     // Make sure it is public or set to Anyone with link can view 
     let url = "https://spreadsheets.google.com/feeds/list/"+spreadsheetID+"/od6/public/values?alt=json";
     d3.json(url).get(function (data) {
-      _this.setState({data: data.feed.entry[0]["gsx$pinterest"]["$t"]});
+      _this.setState({data: data.feed.entry});
     })
 
 
   }
 
   render() {
-    let imageURL= this.state.data;
+    let ItemList=[];
+    for (var d in this.state.data) {
+      ItemList.push({
+        imageURL: this.state.data[d]["gsx$imagesource"]["$t"],
+        type:  this.state.data[d]["gsx$type"]["$t"],
+        name:  this.state.data[d]["gsx$projectname"]["$t"]
+       })
+    }
+
     return (
       <div className="App">
-           {ItemList.map((d,i) => <Item key={i} id={i} name={d.name} text={d.text} imageURL={imageURL} />)} 
+           {ItemList.map((d,i) => <Item key={i} id={i} name={d.name} type={d.type} imageURL={d.imageURL} />)} 
       </div>
     );
   }
