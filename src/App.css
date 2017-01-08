@@ -4,11 +4,14 @@
 }
 
 .Item {
-  width: 500px;
-  height: 300px;
+  width: 30em;
   border: 1px solid #00f;
   margin: 10px;
   font-size: 16px;
+}
+
+img {
+  width: 30em;	
 }
 
 .App-logo {

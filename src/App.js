@@ -3,7 +3,6 @@ import Item from './Item';
 import {ItemList} from './ItemList';
 import * as d3 from 'd3';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -28,12 +27,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     let imageURL= this.state.data;
     return (
       <div className="App">
-           <img src={imageURL} className="App-logo" alt="logo" />
-           {ItemList.map((d,i) => <Item key={i} id={i} name={d.name} text={d.text} />)} 
+           {ItemList.map((d,i) => <Item key={i} id={i} name={d.name} text={d.text} imageURL={imageURL} />)} 
       </div>
     );
   }
