@@ -1,18 +1,19 @@
+
 export const ItemList = [
 	{
-		name: 'datavis + web design',
-		text: 'hello'
+		name: 'item1',
+		text: 'project'
 	},	
 	{
-		name: 'datavis + web design',
-		text: 'hello'
+		name: 'item2',
+		text: 'research'
 	},	
 	{
-		name: 'datavis + web design',
-		text: 'hello'
+		name: 'item3',
+		text: 'insta'
 	},	
 	{
-		name: 'datavis + web design',
-		text: 'hello'
+		name: 'item4',
+		text: 'soundcloud'
 	}
 ];	
