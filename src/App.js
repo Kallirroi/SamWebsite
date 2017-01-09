@@ -13,7 +13,8 @@ class App extends Component {
       home: {},
       project: {},
       current: {},
-      projectsHidden: false
+      projectsHidden: true,
+      homeHidden: false
     }
     this.showDetails=this.showDetails.bind(this);
     this.toggleViews=this.toggleViews.bind(this);
@@ -42,11 +43,11 @@ class App extends Component {
 
   toggleViews() {
      this.setState({projectsHidden: !this.state.projectsHidden});
-     console.log(this.state.projectsHidden)
+     this.setState({homeHidden: !this.state.homeHidden});
   }
 
   render() {
-    let {projectsHidden} = this.state;
+    let {projectsHidden, homeHidden} = this.state;
     let HomeList=[];
     for (let d in this.state.home) {
       HomeList.push({
@@ -66,12 +67,13 @@ class App extends Component {
         ID:  this.state.project[d]["gsx$projectid"]["$t"]
        })
     }
-    let classProject = this.state.projectsHidden ? 'ProjectListIsHidden' : 'ProjectListIsVisible';
+    let classProject = this.state.projectsHidden ? 'ProjectListIsHidden' : 'ProjectList ProjectListIsVisible';
+    let classHome = this.state.homeHidden ? 'HomeListIsHidden' : 'HomeList HomeListIsVisible';
     return (
       <div className="App">
         <div> <h2> title </h2> </div>
         <div> <button onClick={this.toggleViews}> toggle projects/home</button> </div>
-        <div className="HomeListIsVisible"> {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} </div>
+        <div className={classHome}> {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} </div>
         <div className={classProject}> {ProjectList.map((d,i) => <Project projectsHidden={projectsHidden} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL}  onClick={this.showDetails} /> )} </div>
       </div>
     );
