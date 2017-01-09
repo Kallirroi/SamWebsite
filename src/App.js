@@ -16,7 +16,7 @@ class App extends Component {
       projectsHidden: true,
       homeHidden: false
     }
-    this.toggleViews=this.toggleViews.bind(this);
+    this.backHome=this.backHome.bind(this);
     this.selectItem=this.selectItem.bind(this);
   }
 
@@ -36,9 +36,10 @@ class App extends Component {
     });
 
   }
-  toggleViews() {
+  backHome() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
+     this.setState({current: ""});
   }
 
   selectItem(element) {
@@ -69,19 +70,18 @@ class App extends Component {
        })
     }
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
-    console.log(ProjectDataCurrent)
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
     return (
       <div className="App">
         <div className="Title"> <h2> title </h2> </div>
-        <button onClick={this.toggleViews} className={classButton} > back to home</button>
+        <button onClick={this.backHome} className={classButton} > back to home</button>
         <div className={classHome}> 
           {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
         <div className={classProject}> 
-          {ProjectData.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
       </div>
     );
