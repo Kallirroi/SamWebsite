@@ -25,7 +25,7 @@ class Item extends React.Component {
 
 	render() {
 		return (
-	        <div className={this.props.type} ref={ref => { this.ref = ref; }}  onClick={this.showDetails}  > <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
+	        <div className={this.props.type} ref={ref => { this.ref = ref; }}  onClick={this.showDetails}  > <img src={this.props.imageURL} role="presentation"  /> <div className="ItemDetails" >{this.props.type}</div> </div>
 	    )
 	}
 }

@@ -76,13 +76,13 @@ class App extends Component {
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
     return (
       <div className="App">
-        <div className="Title"> <h2> title </h2> </div>
-        <button onClick={this.backHome} className={classButton} > back to home</button>
+        <div className="Title"> <h2> sam ghantous </h2> </div>
+        <div className="Button" onClick={this.backHome} className={classButton} > back to home</div>
         <div className={classHome}> 
           {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
         <div className={classProject}> 
-          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
       </div>
     );
