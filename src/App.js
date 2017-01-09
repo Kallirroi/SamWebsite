@@ -91,13 +91,11 @@ class App extends Component {
     let numberOfInsta = HomeDataSorted.filter((d) => d.ID === "Instagram");
     let indexInsta = 0;
     for (let d in HomeDataSorted) {
-      console.log(indexInsta, numberOfInsta.length, indexInsta < numberOfInsta.length);
-      if (HomeDataSorted[d].ID ==="Instagram") {
+      if (HomeDataSorted[d].ID ==="Instagram" && InstaData[indexInsta] != undefined) {
         indexInsta < numberOfInsta.length ? HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL : 1;
         ++indexInsta;
       }  
     }
-    console.log(HomeDataSorted)
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
 
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
