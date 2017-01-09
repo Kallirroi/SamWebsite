@@ -11,6 +11,7 @@
   margin-left: 2vw;
   color: #222;
   width: 10vw;
+  display: block;
 }
 
 .Title:hover {
@@ -18,7 +19,6 @@
 }
 
 .Item  {
-  width: 30em;
   height: auto;
   font-size: 16px;
 }
@@ -98,6 +98,7 @@
 	position: fixed;
 	left: 80vw;
 	cursor: pointer;
+	z-index: 1;
 }
 .ButtonIsVisible:hover {
 	left: 81vw;

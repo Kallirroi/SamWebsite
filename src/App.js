@@ -57,7 +57,8 @@ class App extends Component {
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
         type:  this.state.home[d]["gsx$type"]["$t"],
         name:  this.state.home[d]["gsx$projectname"]["$t"],
-        ID:  this.state.home[d]["gsx$id"]["$t"]
+        ID:  this.state.home[d]["gsx$id"]["$t"],
+        priority:  this.state.home[d]["gsx$priority"]["$t"]
        })
     }
 
@@ -70,6 +71,8 @@ class App extends Component {
         ID:  this.state.project[d]["gsx$id"]["$t"]
        })
     }
+    let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
+    console.log(HomeDataSorted)
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
@@ -77,7 +80,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Title"> <h2> sam ghantous </h2> </div>
-        <div className="Button" onClick={this.backHome} className={classButton} > back to home</div>
+        <div className="Button" onClick={this.backHome} className={classButton} > back to overview</div>
         <div className={classHome}> 
           {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
