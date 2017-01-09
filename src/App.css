@@ -92,6 +92,9 @@
 .ProjectItem {
   /*margin-top: 5vh;*/
   /*margin-left: 2vw;*/
+  margin-left: 30vw;
+  position: relative;
+  display: block;
 }
 .ProjectItemDetails {
   font-size: 1em;
