@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Item from './Item';
 import Project from './Project';
 import * as d3 from 'd3';
+import $ from 'jquery';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ class App extends Component {
     this.state = {
       home: {},
       project: {},
+      insta: {},
       current: "",
       projectsHidden: true,
       homeHidden: false
@@ -26,6 +28,7 @@ class App extends Component {
     let homeURL = "https://spreadsheets.google.com/feeds/list/"+homeSheetID+"/od6/public/values?alt=json";
     let projectSheetID = "1xOGhLytCsgq9vfEtvp-hWEY8fLpJ7R7ub-9JlixXqZk";
     let projectURL = "https://spreadsheets.google.com/feeds/list/"+projectSheetID+"/od6/public/values?alt=json";
+    let instaURL = "https://api.instagram.com/v1/users/self/media/recent/?access_token=2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475&callback=?";
     
     d3.json(homeURL).get(function (data) {
       _this.setState({home: data.feed.entry});
@@ -33,7 +36,12 @@ class App extends Component {
     
     d3.json(projectURL).get(function (data) {
       _this.setState({project: data.feed.entry});
-    });
+    });    
+
+    $.getJSON(instaURL, function(data) { 
+        console.log(data)
+      })
+
 
   }
   backHome() {
