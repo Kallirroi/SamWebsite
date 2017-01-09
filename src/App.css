@@ -10,13 +10,15 @@
 .Title {
   margin-left: 2vw;
   color: #222;
-  width: 20vw;
+  width: 11vw;
   display: block;
   position: fixed;
   line-height: 10vh;
   vertical-align: middle;
   font-size: 1.8em;
   font-weight: 700;
+  z-index: 100;
+  background-color: #fff;
 }
 
 .Title:hover {
@@ -57,7 +59,7 @@
 }
 
 .ItemDetails:hover {
-  left: 30vw;
+  left: 2vw;
   color: #222;
 }
 
@@ -88,7 +90,7 @@
   	background-color: #ccc;
 	cursor: pointer;
     position: relative;
-	left: 30vw;
+	left: 50vw;
     z-index: -1;
 }
 
@@ -103,17 +105,21 @@
   position: relative;
   display: block;
 }
+
+.ProjectItem:hover {
+	 left: 2vw;
+}
+
 .ProjectItemDetails {
   font-size: 1em;
   position: relative;
-  left: 30vw;
+  left: 0vw;
   top: 0;
   margin-bottom: 2vh;
   font-weight: 700;
+  width: 20em;
 }
-.ProjectItemDetails:hover {
-  left: 0vw;
-}
+
 .HomeData, .ProjectData {
 	position: absolute;
 	top: 10em;
@@ -142,6 +148,7 @@
 	top: 105vh;
 	width: 20vw;
     left: 85vw;
+    visibility: hidden;
 }
 
 .Footer > a{

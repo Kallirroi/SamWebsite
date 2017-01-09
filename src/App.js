@@ -28,7 +28,10 @@ class App extends Component {
     let homeURL = "https://spreadsheets.google.com/feeds/list/"+homeSheetID+"/od6/public/values?alt=json";
     let projectSheetID = "1xOGhLytCsgq9vfEtvp-hWEY8fLpJ7R7ub-9JlixXqZk";
     let projectURL = "https://spreadsheets.google.com/feeds/list/"+projectSheetID+"/od6/public/values?alt=json";
-    let instaURL = "https://api.instagram.com/v1/users/self/media/recent/?access_token=2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475&callback=?";
+    let tokenArchmixes = "4115475317.1677ed0.a5b9b5c9f86845aeaaa5ac24eb809956";
+    let tokenSam = "40791457.1677ed0.b66f37fd8f31410985a1af840ab26655";
+    let tokenKalli = "2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475";
+    let instaURL = "https://api.instagram.com/v1/users/self/media/recent/?access_token="+tokenArchmixes+"&callback=?";
     
     d3.json(homeURL).get(function (data) {
       _this.setState({home: data.feed.entry});
@@ -42,8 +45,8 @@ class App extends Component {
        _this.setState({insta: data.data});
     });
 
-
   }
+
   backHome() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
@@ -57,6 +60,7 @@ class App extends Component {
     //scroll to top of page
     window.scrollTo(0, 0);
   }
+
 
   render() {
     let HomeData=[];
@@ -108,7 +112,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="Title"> sam ghantous </div>
-        <div className="Button" onClick={this.backHome} className={classButton} > back to overview</div>
+        <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
           {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud}/> )} 
         </div>
