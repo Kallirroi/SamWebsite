@@ -3,11 +3,36 @@
   font-family: Karla;
 }
 
-.Item {
+.Item{
   width: 30em;
   border: 1px solid #00f;
   margin: 10px;
   font-size: 16px;
+}
+.Project{
+  width: 30em;
+  border: 1px solid red;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.HomeList, .ProjectList {
+	display: block;
+	position: relative;
+	top: 0;
+}
+
+.HomeListIsVisible {
+	visibility: visible;
+}
+.HomeListIsHidden {
+	visibility: hidden;
+}
+.ProjectListIsHidden {
+	visibility: hidden;
+}
+.ProjectListIsVisible {
+	visibility: visible;
 }
 
 img {

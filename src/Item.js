@@ -6,7 +6,7 @@ class Item extends React.Component {
 
 	componentDidMount(){
 		this.ref.addEventListener('click', () => {
-     	 console.log(this.ref);
+     	 console.log(this.props);
     	}, true);
 	}
 	render() {

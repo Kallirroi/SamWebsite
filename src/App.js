@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import Project from './Project';
 import * as d3 from 'd3';
 
 import './App.css';
@@ -10,9 +11,12 @@ class App extends Component {
     super(props);
     this.state = {
       home: {},
-      project: {}
+      project: {},
+      current: {},
+      projectsHidden: false
     }
     this.showDetails=this.showDetails.bind(this);
+    this.toggleViews=this.toggleViews.bind(this);
   }
 
   componentDidMount() {
@@ -34,11 +38,17 @@ class App extends Component {
 
   showDetails() {
     console.log("click")
+  }  
+
+  toggleViews() {
+     this.setState({projectsHidden: !this.state.projectsHidden});
+     console.log(this.state.projectsHidden)
   }
 
   render() {
+    let {projectsHidden} = this.state;
     let HomeList=[];
-    for (var d in this.state.home) {
+    for (let d in this.state.home) {
       HomeList.push({
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
         type:  this.state.home[d]["gsx$type"]["$t"],
@@ -48,7 +58,7 @@ class App extends Component {
     }
 
     let ProjectList=[];
-    for (var d in this.state.project) {
+    for (let d in this.state.project) {
       ProjectList.push({
         imageURL: this.state.project[d]["gsx$image"]["$t"] ? this.state.project[d]["gsx$image"]["$t"] : null,
         caption:  this.state.project[d]["gsx$caption"]["$t"],
@@ -56,10 +66,13 @@ class App extends Component {
         ID:  this.state.project[d]["gsx$projectid"]["$t"]
        })
     }
+    let classProject = this.state.projectsHidden ? 'ProjectListIsHidden' : 'ProjectListIsVisible';
     return (
       <div className="App">
-        <h2> title </h2>
-        {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} 
+        <div> <h2> title </h2> </div>
+        <div> <button onClick={this.toggleViews}> toggle projects/home</button> </div>
+        <div className="HomeListIsVisible"> {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} </div>
+        <div className={classProject}> {ProjectList.map((d,i) => <Project projectsHidden={projectsHidden} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL}  onClick={this.showDetails} /> )} </div>
       </div>
     );
   }
