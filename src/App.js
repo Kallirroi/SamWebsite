@@ -71,7 +71,7 @@ class App extends Component {
         name:  this.state.home[d]["gsx$projectname"]["$t"],
         ID:  this.state.home[d]["gsx$id"]["$t"],
         priority:  this.state.home[d]["gsx$priority"]["$t"],
-        soundcloud: this.state.home[d]["gsx$soundcloud"]["$t"]
+        soundcloud: this.state.home[d]["gsx$iframelink"]["$t"]
        })
     }
 
@@ -81,7 +81,8 @@ class App extends Component {
         imageURL: this.state.project[d]["gsx$imagesource"]["$t"] ? this.state.project[d]["gsx$imagesource"]["$t"] : null,
         caption:  this.state.project[d]["gsx$caption"]["$t"],
         name:  this.state.project[d]["gsx$projectname"]["$t"],
-        ID:  this.state.project[d]["gsx$id"]["$t"]
+        ID:  this.state.project[d]["gsx$id"]["$t"],
+        doc: this.state.project[d]["gsx$iframelink"]["$t"]
        })
     }
 
@@ -116,7 +117,7 @@ class App extends Component {
           {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud}/> )} 
         </div>
         <div className={classProject}> 
-          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} /> )} 
+          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc} /> )} 
         </div>
         <div className="Footer"><a href="https://kallirroi.github.io/K/" target="_blank">Kalli</a> made this website</div>
       </div>
