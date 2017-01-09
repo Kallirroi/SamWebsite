@@ -5,10 +5,9 @@
 
 .Title, button{
   margin: 10px;
-
 }
 
-.Item{
+.Item  {
   width: 30em;
   border: 1px solid #00f;
   margin: 10px;
@@ -27,6 +26,10 @@
   border: 10px solid gray;
 }
 
+.ProjectItem {
+  border: 10px solid #00f;
+
+}
 .HomeData, .ProjectData {
 	position: absolute;
 	top: 10em;
@@ -53,10 +56,7 @@
 .ButtonIsHidden {
 	visibility: hidden;
 }
+
 img {
   width: 30em;	
-}
-
-.App-logo {
-	width: 30em;
 }
