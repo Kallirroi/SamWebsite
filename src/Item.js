@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
 
+
 class Item extends React.Component {
+
+	componentDidMount(){
+		this.ref.addEventListener('click', () => {
+     	 console.log(this.ref);
+    	}, true);
+	}
 	render() {
 		return (
-	        <div className="Item"> <img src={this.props.imageURL} /> {this.props.name} {this.props.type} </div>
+	        <div  ref={ref => { this.ref = ref; }}  className="Item"> <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
 	    )
 	}
 }

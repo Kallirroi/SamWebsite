@@ -4,9 +4,10 @@ import * as d3 from 'd3';
 
 import './App.css';
 
+
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       home: {},
       project: {}
@@ -29,16 +30,10 @@ class App extends Component {
       _this.setState({project: data.feed.entry});
     });
 
-  window.addEventListener('click', this.showDetails);
-
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('click', this.showDetails);
   }
 
   showDetails() {
-    console.log(this.props.id)
+    console.log("click")
   }
 
   render() {
@@ -63,7 +58,8 @@ class App extends Component {
     }
     return (
       <div className="App">
-           {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} />)} 
+        <h2> title </h2>
+        {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} 
       </div>
     );
   }
