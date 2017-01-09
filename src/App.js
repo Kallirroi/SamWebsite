@@ -66,7 +66,8 @@ class App extends Component {
         type:  this.state.home[d]["gsx$type"]["$t"],
         name:  this.state.home[d]["gsx$projectname"]["$t"],
         ID:  this.state.home[d]["gsx$id"]["$t"],
-        priority:  this.state.home[d]["gsx$priority"]["$t"]
+        priority:  this.state.home[d]["gsx$priority"]["$t"],
+        soundCloud: this.state.home[d]["gsx$soundcloud"]["$t"]
        })
     }
 
@@ -88,6 +89,7 @@ class App extends Component {
     }
 
     let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
+
     let numberOfInsta = HomeDataSorted.filter((d) => d.ID === "Instagram");
     let indexInsta = 0;
     for (let d in HomeDataSorted) {
@@ -96,6 +98,7 @@ class App extends Component {
         ++indexInsta;
       }  
     }
+
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
 
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
@@ -107,7 +110,7 @@ class App extends Component {
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back to overview</div>
         <div className={classHome}> 
-          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud}/> )} 
         </div>
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} /> )} 
