@@ -72,14 +72,13 @@ class App extends Component {
        })
     }
     let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
-    console.log(HomeDataSorted)
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
     return (
       <div className="App">
-        <div className="Title"> <h2> sam ghantous </h2> </div>
+        <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back to overview</div>
         <div className={classHome}> 
           {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 

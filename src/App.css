@@ -10,13 +10,36 @@
 .Title {
   margin-left: 2vw;
   color: #222;
-  width: 10vw;
+  width: 20vw;
   display: block;
+  position: fixed;
+  line-height: 10vh;
+  vertical-align: middle;
+  font-size: 1.8em;
+  font-weight: 700;
 }
 
 .Title:hover {
-	margin-top: 10vh;
+	margin-top: 5vh;
 }
+
+.ButtonIsVisible {
+	visibility: visible;	
+	position: fixed;
+	left: 80vw;
+	cursor: pointer;
+	display: block;
+    line-height: 10vh;
+    vertical-align: middle;
+}
+.ButtonIsVisible:hover {
+	left: 81vw;
+	font-weight: 700;
+}
+.ButtonIsHidden {
+	visibility: hidden;
+}
+
 
 .Item  {
   height: auto;
@@ -93,20 +116,7 @@
 	visibility: hidden;
 }
 
-.ButtonIsVisible {
-	visibility: visible;	
-	position: fixed;
-	left: 80vw;
-	cursor: pointer;
-	z-index: 1;
-}
-.ButtonIsVisible:hover {
-	left: 81vw;
-	font-weight: 700;
-}
-.ButtonIsHidden {
-	visibility: hidden;
-}
+
 
 img {
   /*width: 30em;	*/
