@@ -27,23 +27,23 @@
   border: 10px solid gray;
 }
 
-.HomeList, .ProjectList {
+.HomeData, .ProjectData {
 	position: absolute;
 	top: 10em;
 	left: 0;
 }
 
-.HomeListIsVisible {
+.HomeDataIsVisible {
 	visibility: visible;
 }
-.HomeListIsHidden {
+.HomeDataIsHidden {
 	visibility: hidden;
 }
 
-.ProjectListIsVisible {
+.ProjectDataIsVisible {
 	visibility: visible;
 }
-.ProjectListIsHidden {
+.ProjectDataIsHidden {
 	visibility: hidden;
 }
 

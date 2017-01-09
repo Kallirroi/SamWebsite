@@ -45,12 +45,13 @@ class App extends Component {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
+
   }
 
   render() {
-    let HomeList=[];
+    let HomeData=[];
     for (let d in this.state.home) {
-      HomeList.push({
+      HomeData.push({
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
         type:  this.state.home[d]["gsx$type"]["$t"],
         name:  this.state.home[d]["gsx$projectname"]["$t"],
@@ -58,27 +59,29 @@ class App extends Component {
        })
     }
 
-    let ProjectList=[];
+    let ProjectData=[];
     for (let d in this.state.project) {
-      ProjectList.push({
+      ProjectData.push({
         imageURL: this.state.project[d]["gsx$imagesource"]["$t"] ? this.state.project[d]["gsx$imagesource"]["$t"] : null,
         caption:  this.state.project[d]["gsx$caption"]["$t"],
         name:  this.state.project[d]["gsx$projectname"]["$t"],
         ID:  this.state.project[d]["gsx$id"]["$t"]
        })
     }
-    let classProject = this.state.projectsHidden ? 'ProjectListIsHidden' : 'ProjectList ProjectListIsVisible';
+    let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
+    console.log(ProjectDataCurrent)
+    let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
-    let classHome = this.state.homeHidden ? 'HomeListIsHidden' : 'HomeList HomeListIsVisible';
+    let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
     return (
       <div className="App">
         <div className="Title"> <h2> title </h2> </div>
         <button onClick={this.toggleViews} className={classButton} > back to home</button>
         <div className={classHome}> 
-          {HomeList.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
         <div className={classProject}> 
-          {ProjectList.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {ProjectData.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
       </div>
     );
