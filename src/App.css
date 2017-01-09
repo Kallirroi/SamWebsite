@@ -28,8 +28,8 @@
 }
 
 .HomeList, .ProjectList {
-	position: relative;
-	top: 6em;
+	position: absolute;
+	top: 10em;
 	left: 0;
 }
 
@@ -45,7 +45,13 @@
 }
 .ProjectListIsHidden {
 	visibility: hidden;
-	overflow-y: hidden;
+}
+
+.ButtonIsVisible {
+	visibility: visible;
+}
+.ButtonIsHidden {
+	visibility: hidden;
 }
 img {
   width: 30em;	
