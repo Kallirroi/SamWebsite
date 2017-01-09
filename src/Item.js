@@ -17,16 +17,15 @@ class Item extends React.Component {
 		this.ref.removeEventListener('click', this.showDetails);
 	}	
 
-	 showDetails(e) {
+	showDetails(e) {
 	 	e.preventDefault();
-        console.log(this.props.id);
-        this.setState({current: this.props.id});
-	  }  
+        this.props.selectItem(this.props.id);
+	}  
 
 
 	render() {
 		return (
-	        <div className="Item" ref={ref => { this.ref = ref; }}  onClick={this.showDetails}  > <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
+	        <div className={this.props.type} ref={ref => { this.ref = ref; }}  onClick={this.showDetails}  > <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
 	    )
 	}
 }

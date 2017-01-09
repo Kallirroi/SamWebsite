@@ -3,17 +3,28 @@
   font-family: Karla;
 }
 
+.Title, button{
+  margin: 10px;
+
+}
+
 .Item{
   width: 30em;
   border: 1px solid #00f;
   margin: 10px;
   font-size: 16px;
 }
+.Research {
+ border: 10px solid red;
+}
 .Project{
-  width: 30em;
-  border: 1px solid red;
-  margin: 10px;
-  font-size: 16px;
+  border: 10px solid yellow;
+}
+.Instagram {
+  border: 10px solid cyan;
+}
+.Soundcloud {
+  border: 10px solid gray;
 }
 
 .HomeList, .ProjectList {

@@ -12,11 +12,12 @@ class App extends Component {
     this.state = {
       home: {},
       project: {},
-      current: null,
+      current: "",
       projectsHidden: false,
       homeHidden: false
     }
     this.toggleViews=this.toggleViews.bind(this);
+    this.selectItem=this.selectItem.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +39,10 @@ class App extends Component {
   toggleViews() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
+  }
+
+  selectItem(element) {
+    this.setState({current: element});
   }
 
   render() {
@@ -64,9 +69,9 @@ class App extends Component {
     let classHome = this.state.homeHidden ? 'HomeListIsHidden' : 'HomeList HomeListIsVisible';
     return (
       <div className="App">
-        <div> <h2> title </h2> </div>
+        <div className="Title"> <h2> title </h2> </div>
         <div> <button onClick={this.toggleViews}> toggle projects/home</button> </div>
-        <div className={classHome}> {HomeList.map((d,i) => <Item  key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} </div>
+        <div className={classHome}> {HomeList.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} </div>
         <div className={classProject}> {ProjectList.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} </div>
       </div>
     );
