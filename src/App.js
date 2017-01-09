@@ -86,6 +86,7 @@ class App extends Component {
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
+        <div className="Footer"><a href="https://kallirroi.github.io/K/" target="_blank">Kalli</a> made this website</div>
       </div>
     );
   }

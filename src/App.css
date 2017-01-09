@@ -100,6 +100,7 @@
 	position: absolute;
 	top: 10em;
 	margin-left: 2vw;
+	margin-bottom: 5vh;
 }
 
 .HomeDataIsVisible {
@@ -116,8 +117,15 @@
 	visibility: hidden;
 }
 
+.Footer {
+	display: block;
+	font-size: 0.9em;
+	position: relative;
+	top: 105vh;
+	width: 20vw;
+    left: 85vw;
+}
 
-
-img {
-  /*width: 30em;	*/
+.Footer > a{
+	color: #00f;
 }
