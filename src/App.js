@@ -39,8 +39,8 @@ class App extends Component {
     });    
 
     $.getJSON(instaURL, function(data) { 
-        console.log(data)
-      })
+       _this.setState({insta: data.data});
+    });
 
 
   }
@@ -79,17 +79,37 @@ class App extends Component {
         ID:  this.state.project[d]["gsx$id"]["$t"]
        })
     }
+
+    let InstaData=[];
+    for (let d in this.state.insta) {
+      InstaData.push({
+        imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"]
+       })
+    }
+
     let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
+    let numberOfInsta = HomeDataSorted.filter((d) => d.ID === "Instagram");
+    let indexInsta = 0;
+    for (let d in HomeDataSorted) {
+      console.log(indexInsta, numberOfInsta.length, indexInsta < numberOfInsta.length);
+      if (HomeDataSorted[d].ID ==="Instagram") {
+        indexInsta < numberOfInsta.length ? HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL : 1;
+        ++indexInsta;
+      }  
+    }
+    console.log(HomeDataSorted)
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
+
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
+
     return (
       <div className="App">
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back to overview</div>
         <div className={classHome}> 
-          {HomeData.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
+          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} 
         </div>
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} /> )} 
