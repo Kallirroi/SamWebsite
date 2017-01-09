@@ -46,7 +46,8 @@ class App extends Component {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-
+    //scroll to top of page
+    window.scrollTo(0, 0);
   }
 
   render() {
