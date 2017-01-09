@@ -61,24 +61,32 @@
   color: #222;
 }
 
-
-.Research {
- /*border: 1px solid red;*/
-	cursor: pointer;
-
-}
 .Project{
-  /*border: 1px solid yellow;*/
+	left: 4vw;
 	cursor: pointer;
-
+    position: relative;
+    z-index: 2;
 }
+.Research {
+	left: 60vw;
+	cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
 .Instagram {
   	background-color: #ccc;
+	left: 10vw;
 	cursor: pointer;
+    position: relative;
+    z-index: 0;
 }
 .Soundcloud {
   	background-color: #ccc;
 	cursor: pointer;
+    position: relative;
+	left: 30vw;
+    z-index: -1;
 }
 
 .ProjectItem {
