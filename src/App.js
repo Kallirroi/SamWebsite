@@ -12,16 +12,15 @@ class App extends Component {
     this.state = {
       home: {},
       project: {},
-      current: {},
-      projectsHidden: true,
+      current: null,
+      projectsHidden: false,
       homeHidden: false
     }
-    this.showDetails=this.showDetails.bind(this);
     this.toggleViews=this.toggleViews.bind(this);
   }
 
   componentDidMount() {
-    var _this = this;
+    let _this = this;
     let homeSheetID = "1f-VK6GAJciN5-p4uCWMUllY9_6HRgnr8yoQBv8AaoT4";
     let homeURL = "https://spreadsheets.google.com/feeds/list/"+homeSheetID+"/od6/public/values?alt=json";
     let projectSheetID = "1xOGhLytCsgq9vfEtvp-hWEY8fLpJ7R7ub-9JlixXqZk";
@@ -36,18 +35,12 @@ class App extends Component {
     });
 
   }
-
-  showDetails() {
-    console.log("click")
-  }  
-
   toggleViews() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
   }
 
   render() {
-    let {projectsHidden, homeHidden} = this.state;
     let HomeList=[];
     for (let d in this.state.home) {
       HomeList.push({
@@ -61,10 +54,10 @@ class App extends Component {
     let ProjectList=[];
     for (let d in this.state.project) {
       ProjectList.push({
-        imageURL: this.state.project[d]["gsx$image"]["$t"] ? this.state.project[d]["gsx$image"]["$t"] : null,
+        imageURL: this.state.project[d]["gsx$imagesource"]["$t"] ? this.state.project[d]["gsx$imagesource"]["$t"] : null,
         caption:  this.state.project[d]["gsx$caption"]["$t"],
         name:  this.state.project[d]["gsx$projectname"]["$t"],
-        ID:  this.state.project[d]["gsx$projectid"]["$t"]
+        ID:  this.state.project[d]["gsx$id"]["$t"]
        })
     }
     let classProject = this.state.projectsHidden ? 'ProjectListIsHidden' : 'ProjectList ProjectListIsVisible';
@@ -73,8 +66,8 @@ class App extends Component {
       <div className="App">
         <div> <h2> title </h2> </div>
         <div> <button onClick={this.toggleViews}> toggle projects/home</button> </div>
-        <div className={classHome}> {HomeList.map((d,i) => <Item key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} onClick={this.showDetails} /> )} </div>
-        <div className={classProject}> {ProjectList.map((d,i) => <Project projectsHidden={projectsHidden} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL}  onClick={this.showDetails} /> )} </div>
+        <div className={classHome}> {HomeList.map((d,i) => <Item  key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} </div>
+        <div className={classProject}> {ProjectList.map((d,i) => <Project key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} /> )} </div>
       </div>
     );
   }

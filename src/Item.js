@@ -4,14 +4,29 @@ import './App.css';
 
 class Item extends React.Component {
 
-	componentDidMount(){
-		this.ref.addEventListener('click', () => {
-     	 console.log(this.props);
-    	}, true);
+	constructor(props) {
+		super(props);
+		this.showDetails=this.showDetails.bind(this);
 	}
+
+	componentDidMount(){
+		this.ref.addEventListener('click', this.showDetails, true);
+	}
+
+	componentWillUnmount(){
+		this.ref.removeEventListener('click', this.showDetails);
+	}	
+
+	 showDetails(e) {
+	 	e.preventDefault();
+        console.log(this.props.id);
+        this.setState({current: this.props.id});
+	  }  
+
+
 	render() {
 		return (
-	        <div  ref={ref => { this.ref = ref; }}  className="Item"> <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
+	        <div className="Item" ref={ref => { this.ref = ref; }}  onClick={this.showDetails}  > <img src={this.props.imageURL} role="presentation"  /> {this.props.name} {this.props.type} </div>
 	    )
 	}
 }

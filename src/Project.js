@@ -6,7 +6,7 @@ class Project extends React.Component {
 
 	componentDidMount(){
 		this.ref.addEventListener('click', () => {
-     	 console.log(this.props);
+     	 this.setState({current: this.props.id});
     	}, true);
 	}
 	render() {
