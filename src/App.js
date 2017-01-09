@@ -71,7 +71,7 @@ class App extends Component {
         name:  this.state.home[d]["gsx$projectname"]["$t"],
         ID:  this.state.home[d]["gsx$id"]["$t"],
         priority:  this.state.home[d]["gsx$priority"]["$t"],
-        soundCloud: this.state.home[d]["gsx$soundcloud"]["$t"]
+        soundcloud: this.state.home[d]["gsx$soundcloud"]["$t"]
        })
     }
 
@@ -108,7 +108,6 @@ class App extends Component {
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
-
     return (
       <div className="App">
         <div className="Title"> sam ghantous </div>
