@@ -4,12 +4,9 @@ import GameLoop from './GameLoop';
 import Item from './Item';
 import Project from './Project';
 import Title from './Title';
-import * as d3 from 'd3';
 import $ from 'jquery';
 
 import './App.css';
-
-
 
 
 class App extends Component {
@@ -43,15 +40,15 @@ class App extends Component {
     let tokenKalli = "2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475";
     let instaURL = "https://api.instagram.com/v1/users/self/media/recent/?access_token="+tokenArchmixes+"&callback=?";
     
-    d3.json(homeURL).get(function (data) {
+    $.getJSON(homeURL, function (data) {
       _this.setState({home: data.feed.entry});
     });
     
-    d3.json(projectURL).get(function (data) {
+    $.getJSON(projectURL, function (data) {
       _this.setState({project: data.feed.entry});
     });    
 
-    $.getJSON(instaURL, function(data) {  //couldn't use d3 because of CORS
+    $.getJSON(instaURL, function(data) {  
        _this.setState({insta: data.data});
     });
   }
@@ -70,14 +67,13 @@ class App extends Component {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-    //scroll to top of page
-    window.scrollTo(0, 0);
+   
+    window.scrollTo(0, 0); //scroll to top of page
   }
 
   anxiety(props, i) {
     let condition = Math.cos(props.time) > Math.random() ;
     let randomItem = Math.floor(Math.random() * this.state.home.length);
-    console.log(randomItem)
     return condition && i===randomItem ? "ImagesAnxiety" : "ImagesNoAnxiety";
   }
 
