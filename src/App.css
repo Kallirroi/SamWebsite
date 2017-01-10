@@ -17,25 +17,25 @@ width: 100vw;
 height:100vh;
 display: inline-block;
 position: fixed;
-background: linear-gradient(to bottom, rgba(255, 0, 127, 0.3), rgba(205, 254, 0, 0.3), rgba(79, 250, 216, 0.3), rgba(0, 0, 255, 0.3));
+background: linear-gradient(to bottom, rgba(255, 0, 127, 0.2), rgba(205, 254, 0, 0.2), rgba(79, 250, 216, 0.2), rgba(0, 0, 255, 0.2));
 background-size: 800% 800%;
 
--webkit-animation: AnimationName 40s ease infinite;
--moz-animation: AnimationName 40s ease infinite;
-animation: AnimationName 40s ease infinite;
+-webkit-animation: changeGradient 30s ease-in-out infinite;
+-moz-animation: changeGradient 30s ease-in-out infinite;
+animation: changeGradient 30s ease-in-out infinite;
 }
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes changeGradient {
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes changeGradient {
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
 }
-@keyframes AnimationName { 
+@keyframes changeGradient { 
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
@@ -45,17 +45,18 @@ animation: AnimationName 40s ease infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-left: 2vw;
-color: #222;
-display: inline-block;
+left: 40vw;
+color: #00f;
+display: block;
 position: fixed;
 line-height: 10vh;
 vertical-align: middle;
-font-size: 10em;
-font-weight: 700;
+font-size: 8em;
+/*font-weight: 700;*/
 z-index: 100;
-text-transform: uppercase;
 top: 2vh;
+margin: 0 auto;
+letter-spacing: -0.05em;
 }
 .Title:hover {
 opacity: 0;
@@ -120,13 +121,41 @@ animation: moveAround 0.2s ease-in-out infinite;
 animation: none;
 }
 
-/*@keyframes toggleOpacity {
-20% { opacity: 1; } 
-20.001% { opacity: 0.2;}
-54.999% { opacity: 0.2;} 
-55% { opacity: 1; }
-}*/
 
+@-webkit-keyframes moveAround {
+20.001% { 
+  margin-left: 0.1vw; 
+}
+
+40.001% {
+  margin-left: 0vw;
+}  
+
+40.002% {
+  margin-bottom: 0.1vh;
+}
+
+64.999% { 
+  margin-bottom: 0vh;
+  } /* Turn back on */
+}
+@-moz-keyframes moveAround {
+20.001% { 
+  margin-left: 0.1vw; 
+}
+
+40.001% {
+  margin-left: 0vw;
+}  
+
+40.002% {
+  margin-bottom: 0.1vh;
+}
+
+64.999% { 
+  margin-bottom: 0vh;
+  } /* Turn back on */
+}
 @keyframes moveAround {
 20.001% { 
   margin-left: 0.1vw; 
@@ -152,12 +181,12 @@ cursor: url(cursor_hover.png), auto;
 position: relative;
 margin: 0 auto;
 margin-bottom: 2vh;
-border: 1px solid black;
+
 display: inline-block;
 }
 
 .Project > img {
-  box-shadow: 3px 3px 11px 0px #FF007F;
+  box-shadow: 3px 3px 50px 0px #FF007F;
 /*width: 60vw;*/
 }
 
@@ -177,12 +206,12 @@ display: inline-block;
   width: 40vw;
   margin: 0 auto;
   margin-bottom: 2vh;
-border: 1px solid black;
+
 
 }
 
 .Research  > img {
-	box-shadow: 3px 3px 11px 0px #00f;
+	box-shadow: 3px 3px 50px 0px #00f;
   width: 40vw;
 }
 
@@ -201,11 +230,11 @@ border: 1px solid black;
   display: inline-block;
   margin: 0 auto;
   left: 7vw;
-border: 1px solid black;
+
 
 }
 .Instagram > img {
-	box-shadow: 3px 3px 11px 0px #cdfe00;
+	box-shadow: 3px 3px 50px 0px #cdfe00;
   width: 20em;
 }
 
@@ -225,7 +254,7 @@ border: 1px solid black;
   left: 38vw;
   width: 20vw;
   margin: 0 auto;
-border: 1px solid black;
+
 }
 
 .Soundcloud > .ItemType {
@@ -233,7 +262,7 @@ border: 1px solid black;
 }
 
 .Soundcloud > .player {
-	box-shadow: 3px 3px 11px 0px #4ffad8;
+	box-shadow: 3px 3px 50px 0px #4ffad8;
   width: 20vw;
 }
 
@@ -256,7 +285,7 @@ left: 20vw;
 
 .ProjectItem > img {
 width: 50vw;
-box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 }
 
 .ProjectItemDetails {
@@ -275,7 +304,7 @@ font-weight: 400;
 
 .Doc {
 margin-bottom: 10vh;
-box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 
 }
 
