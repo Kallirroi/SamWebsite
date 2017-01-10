@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
+body {
+  cursor: url(cursor.png), auto;
+}
+
 .App {
   text-align: left;
   font-family: Karla;
   color: #00f;
-  cursor: crosshair;
+  cursor: url(cursor.png), auto;
   overflow-x: hidden;
 }
 
@@ -39,7 +43,7 @@
 	visibility: visible;	
 	position: fixed;
 	left: 80vw;
-	cursor: pointer;
+	cursor: url(cursor_hover.png), auto;
 	display: block;
     line-height: 10vh;
     vertical-align: middle;
@@ -86,7 +90,7 @@
 /* --------------------Specific types of home items*/
 
 .Project{
-	cursor: pointer;
+	cursor: url(cursor_hover.png), auto;
     position: relative;
 	width: 60vw;
 	margin: 0 auto;
@@ -99,7 +103,7 @@
 }
 .Research {
 	left: 40vw;
-	cursor: pointer;
+	cursor: url(cursor_hover.png), auto;
     position: relative;
 	width: 40vw;
 	margin: 0 auto;
@@ -113,7 +117,7 @@
 }
 
 .Instagram {
-	cursor: pointer;
+	cursor: url(cursor_hover.png), auto;
     position: relative;
     width: 20em;
 	margin: 0 auto;
@@ -125,7 +129,7 @@
     width: 20em;
 }
 .Soundcloud {
-	cursor: pointer;
+	cursor: url(cursor_hover.png), auto;
     position: relative;
 	left: 38vw;
     width: 20vw;
@@ -135,6 +139,11 @@
 .Soundcloud > .player {
   	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
     width: 20vw;
+}
+
+.Soundcloud > iframe {
+	cursor: url(cursor_hover.png), auto;
+	
 }
 
 /* -----------------------------------------Project Page*/
@@ -177,6 +186,8 @@
 
 .Doc > iframe {
 	height: 80vh;
+	cursor: url(cursor_hover.png), auto;
+
 }
 
 /* -----------------------------------------Visibility tricks*/
