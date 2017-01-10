@@ -23,9 +23,6 @@
   background-color: #fff;
 }
 
-.Title:hover {
-	margin-top: 5vh;
-}
 
 /* -----------------------------------------Button*/
 .ButtonIsVisible {
@@ -48,11 +45,11 @@
 
 .Item  {
   height: auto;
-  font-size: 16px;
-  pointer-events: visible;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
-.ItemDetails {
+.ItemDetails, .ItemType {
   font-size: 1em;
   position: relative;
   left: 0vw;
@@ -62,6 +59,13 @@
   font-weight: 700;
 }
 
+.ItemDetailsIsHidden {
+	visibility: hidden;
+}
+
+.ItemTypeIsHidden {
+	visibility: hidden;
+}
 
 /* --------------------Specific types of home items*/
 
@@ -69,9 +73,10 @@
 	cursor: pointer;
     position: relative;
 	width: 60vw;
-	border: 10px solid #00f;
+	border: 2px solid #00f;
 	margin: 0 auto;
 	margin-bottom: 2vh;
+    box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 }
 
 .Project > img {
@@ -81,10 +86,12 @@
 	left: 40vw;
 	cursor: pointer;
     position: relative;
-	border: 10px solid pink;
+	border: 2px solid pink;
 	width: 40vw;
 	margin: 0 auto;
 	margin-bottom: 2vh;
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+
 }
 
 .Research  > img {
@@ -95,10 +102,12 @@
 	cursor: pointer;
     position: relative;
     width: 20em;
-	border: 10px solid cyan;
+	border: 2px solid cyan;
 	margin: 0 auto;
 	left: 7vw;
 	margin-bottom: 2vh;
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+
 }
 .Instagram > img {
     width: 20em;
@@ -108,9 +117,11 @@
     position: relative;
 	left: 38vw;
     width: 20vw;
-	border: 10px solid orange;
+	border: 2px solid orange;
 	margin: 0 auto;
 	margin-bottom: 2vh;
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+
 }
 
 .Soundcloud > img {
@@ -125,6 +136,9 @@
   margin: 0 auto;
   position: relative;
   display: block;
+  box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+  margin-bottom: 10vh;
+  left: 20vw;
 }
 
 .ProjectItem > img {
@@ -142,8 +156,14 @@
   width: 20em;
 }
 
+.ProjectItemDetails-Caption {
+	font-weight: 400;
+}
+
 .Doc {
-  margin-bottom: 2vh;
+  margin-bottom: 10vh;
+  box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+
 }
 
 /* -----------------------------------------Visibility tricks*/

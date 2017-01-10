@@ -71,7 +71,12 @@ class App extends Component {
         name:  this.state.home[d]["gsx$projectname"]["$t"],
         ID:  this.state.home[d]["gsx$id"]["$t"],
         priority:  this.state.home[d]["gsx$priority"]["$t"],
-        soundcloud: this.state.home[d]["gsx$iframelink"]["$t"]
+        soundcloud: this.state.home[d]["gsx$iframelink"]["$t"],
+        details1: this.state.home[d]["gsx$projectdata1"]["$t"],
+        details2: this.state.home[d]["gsx$projectdata2"]["$t"],
+        details3: this.state.home[d]["gsx$projectdata3"]["$t"],
+        details4: this.state.home[d]["gsx$projectdata4"]["$t"],
+        detailslink: this.state.home[d]["gsx$projectdatalink"]["$t"]
        })
     }
 
@@ -114,10 +119,10 @@ class App extends Component {
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
-          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud}/> )} 
+          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
         </div>
         <div className={classProject}> 
-          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc} /> )} 
+          {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc}  /> )} 
         </div>
         <div className="Footer"><a href="https://kallirroi.github.io/K/" target="_blank">Kalli</a> made this website</div>
       </div>
