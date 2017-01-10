@@ -65,7 +65,6 @@ left: 0.5vw;
 top: 1vh;
 font-weight: 700;
 line-height: 1em;
-word-wrap: break-word;
 }
 
 .ItemDetails > p {
@@ -134,7 +133,7 @@ display: inline-block;
 }
 
 .Project > .ItemDetails{
-  width: 30vw;
+  display: inline-block;
   color: #FF007F;
 }
 .Project > .ItemType {
@@ -160,6 +159,7 @@ border: 1px solid black;
 
 .Research > .ItemDetails{
   color: #00f;
+  display: inline-block;
 }
 
 .Research >  .ItemType {
@@ -169,7 +169,7 @@ border: 1px solid black;
 .Instagram {
   cursor: url(cursor_hover.png), auto;
   position: relative;
-  width: 20em;
+  display: inline-block;
   margin: 0 auto;
   left: 7vw;
 border: 1px solid black;

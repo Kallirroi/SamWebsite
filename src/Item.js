@@ -45,12 +45,12 @@ class Item extends React.Component {
 	        	<div className={classNameItemType}> 
 	        		{this.props.type} 
 	        	</div>
-	        	<div className={classNameItemDetails} > 
-	        		<p>{this.props.details1}</p>
-        			<p>{this.props.details2}</p>
-        			<p>{this.props.details3}</p>
-        			<p>{this.props.details4}</p>
-        			<p>{this.props.details5}</p>
+	        	<div className={classNameItemDetails} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit}  > 
+	        		{this.props.details1}<br/><br/>
+        			{this.props.details2}<br/><br/>
+        			{this.props.details3}<br/><br/>
+        			{this.props.details4}<br/><br/>
+        			{this.props.details5}
 	        	</div> 
 	        </div>
 	    )
