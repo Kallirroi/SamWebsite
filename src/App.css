@@ -2,6 +2,7 @@
 
 body {
 cursor: url(cursor.png), auto;
+
 }
 
 .App {
@@ -10,6 +11,12 @@ font-family: Karla;
 color: #00f;
 cursor: url(cursor.png), auto;
 overflow-x: hidden;
+box-sizing: border-box;
+background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
+width: 100vw;
+height:100vh;
+display: inline-block;
+position: fixed;
 }
 
 
