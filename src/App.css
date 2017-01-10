@@ -52,11 +52,17 @@
 .ItemDetails, .ItemType {
   font-size: 1em;
   position: relative;
-  left: 0vw;
+  left: 0.5vw;
   top: 0;
   margin-bottom: 2vh;
   margin-top: 1vh;
-  font-weight: 700;
+  font-weight: 400;
+}
+
+.ItemType {
+	font-weight: 700;
+ 	margin-bottom: 0vh;
+
 }
 
 .ItemDetailsIsHidden {
@@ -73,28 +79,26 @@
 	cursor: pointer;
     position: relative;
 	width: 60vw;
-	border: 2px solid #00f;
 	margin: 0 auto;
 	margin-bottom: 2vh;
-    box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 }
 
 .Project > img {
+    box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 	width: 60vw;
 }
 .Research {
 	left: 40vw;
 	cursor: pointer;
     position: relative;
-	border: 2px solid pink;
 	width: 40vw;
 	margin: 0 auto;
 	margin-bottom: 2vh;
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 
 }
 
 .Research  > img {
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 	width: 40vw;
 }
 
@@ -102,14 +106,12 @@
 	cursor: pointer;
     position: relative;
     width: 20em;
-	border: 2px solid cyan;
 	margin: 0 auto;
 	left: 7vw;
-	margin-bottom: 2vh;
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 
 }
 .Instagram > img {
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
     width: 20em;
 }
 .Soundcloud {
@@ -117,14 +119,11 @@
     position: relative;
 	left: 38vw;
     width: 20vw;
-	border: 2px solid orange;
 	margin: 0 auto;
-	margin-bottom: 2vh;
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
-
 }
 
-.Soundcloud > img {
+.Soundcloud > .player {
+  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
     width: 20vw;
 }
 
