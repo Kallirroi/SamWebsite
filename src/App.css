@@ -143,7 +143,7 @@ body {
 
 .Soundcloud > iframe {
 	cursor: url(cursor_hover.png), auto;
-	
+
 }
 
 /* -----------------------------------------Project Page*/
@@ -187,7 +187,10 @@ body {
 .Doc > iframe {
 	height: 80vh;
 	cursor: url(cursor_hover.png), auto;
+}
 
+::-webkit-scrollbar {
+	display: none;
 }
 
 /* -----------------------------------------Visibility tricks*/
