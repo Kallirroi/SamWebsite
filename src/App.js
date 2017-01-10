@@ -81,6 +81,7 @@ class App extends Component {
     let HomeData=[];
     let ProjectData=[];
     let InstaData=[];
+
     for (let d in this.state.home) {
       HomeData.push({
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
@@ -89,7 +90,7 @@ class App extends Component {
         ID:  this.state.home[d]["gsx$id"]["$t"],
         priority:  this.state.home[d]["gsx$priority"]["$t"],
         soundcloud: this.state.home[d]["gsx$iframelink"]["$t"],
-        details1: this.state.home[d]["gsx$projectdata1"]["$t"],
+        details1: this.state.home[d]["gsx$projectdata1"]["$t"] ? this.state.home[d]["gsx$projectdata1"]["$t"] : null,
         details2: this.state.home[d]["gsx$projectdata2"]["$t"],
         details3: this.state.home[d]["gsx$projectdata3"]["$t"],
         details4: this.state.home[d]["gsx$projectdata4"]["$t"],
@@ -111,8 +112,10 @@ class App extends Component {
 
     for (let d in this.state.insta) {
       InstaData.push({
-        imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"]
+        imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"],
+        details1: this.state.insta[d]["caption"] != null ? this.state.insta[d]["caption"]["text"] : null
        })
+
     }
 
     let numberOfInsta = HomeDataSorted.filter((d) => d.ID === "Instagram");
@@ -120,6 +123,7 @@ class App extends Component {
     for (let d in HomeDataSorted) {
       if (HomeDataSorted[d].ID ==="Instagram" && InstaData[indexInsta] != undefined) {
         indexInsta < numberOfInsta.length ? HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL : 1;
+        indexInsta < numberOfInsta.length ? HomeDataSorted[d].details1 = InstaData[indexInsta].details1 : 1;
         ++indexInsta;
       }  
     }
@@ -129,7 +133,6 @@ class App extends Component {
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
-
     return (
       <div className="App">
         <div className="Title"> sam ghantous </div>
