@@ -6,7 +6,7 @@ class Title extends React.Component {
 
 	render() {
 		return (
-	        <div className={[this.props.className, "Title"].join(' ')} > 
+	        <div className={["ImagesAnxiety", "Title"].join(' ')} > 
 	        	sam ghantous
 	        </div>
 	    )

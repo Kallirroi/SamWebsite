@@ -74,9 +74,11 @@ class App extends Component {
     window.scrollTo(0, 0);
   }
 
-  anxiety(props) {
-    let condition = Math.cos(props.time) < Math.random();
-    return condition ? "ImagesAnxiety" : "ImagesNoAnxiety";
+  anxiety(props, i) {
+    let condition = Math.cos(props.time) > Math.random() ;
+    let randomItem = Math.floor(Math.random() * this.state.home.length);
+    console.log(randomItem)
+    return condition && i===randomItem ? "ImagesAnxiety" : "ImagesNoAnxiety";
   }
 
   render() {
@@ -138,10 +140,10 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Title className={this.anxiety(this.props)}/>
+        <Title />
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
-          {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
+          {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props, i)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
         </div>
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc}  /> )} 

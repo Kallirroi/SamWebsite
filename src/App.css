@@ -96,16 +96,29 @@ body {
   animation: none;
 }
 
-@keyframes toggleOpacity {
-  20% { opacity: 1; } /* Turn off */
+/*@keyframes toggleOpacity {
+  20% { opacity: 1; } 
   20.001% { opacity: 0.2;}
-  54.999% { opacity: 0.2;} /* Turn back on */
+  54.999% { opacity: 0.2;} 
   55% { opacity: 1; }
-}
+}*/
 
 @keyframes moveAround {
-  20.001% { margin-left: 0.25vw;}
-  54.999% { margin-left: 0.25vw;} /* Turn back on */
+  20.001% { 
+    margin-left: 0.1vw; 
+  }
+
+  40.001% {
+    margin-left: 0vw;
+  }  
+
+  40.002% {
+    margin-bottom: 0.1vh;
+  }
+
+  64.999% { 
+    margin-bottom: 0vh;
+    } /* Turn back on */
 }
 
 /* --------------------Specific types of home items*/
