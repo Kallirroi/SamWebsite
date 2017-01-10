@@ -132,7 +132,11 @@ box-shadow: 3px 3px 11px 0px #FF007F;
 /*width: 60vw;*/
 }
 
-.Project > .ItemDetails, .ItemType {
+.Project > .ItemDetails{
+  width: 30vw;
+  color: #FF007F;
+}
+.Project > .ItemType {
   width: 30vw;
   color: #FF007F;
 }
@@ -153,7 +157,11 @@ border: 1px solid black;
   width: 40vw;
 }
 
-.Research > .ItemDetails, .ItemType {
+.Research > .ItemDetails{
+  color: #00f;
+}
+
+.Research >  .ItemType {
   color: #00f;
 }
 
@@ -171,7 +179,12 @@ border: 1px solid black;
   width: 20em;
 }
 
-.Instagram > .ItemDetails, .ItemType {
+.Instagram > .ItemDetails {
+  font-size: 1.4em;
+  color: #cdfe00;
+}
+
+.Instagram > .ItemType {
   font-size: 1.4em;
   color: #cdfe00;
 }
