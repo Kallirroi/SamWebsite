@@ -7,6 +7,14 @@
   cursor: crosshair;
   overflow-x: hidden;
 }
+
+.TestIsHidden {
+	visibility: hidden;
+}
+
+.TestIsVisible {
+	visibility: visible;
+}
 /* -----------------------------------------Title*/
 
 .Title {

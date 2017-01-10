@@ -9,6 +9,8 @@ import $ from 'jquery';
 import './App.css';
 
 
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -55,6 +57,7 @@ class App extends Component {
  componentWillUpdate() {
     this.anxiety(this.props);
   }
+
   backHome() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
@@ -70,11 +73,14 @@ class App extends Component {
   }
 
   anxiety(props) {
-    console.log(props.time);
+    let randomNumber = Math.floor(Math.random() * 5 + Math.random() -0.5);
+    return Math.floor(props.time/1000)%randomNumber ? "AnxietyIsHidden" : "AnxietyIsVisible";
   }
 
   render() {
     let HomeData=[];
+    let ProjectData=[];
+    let InstaData=[];
     for (let d in this.state.home) {
       HomeData.push({
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
@@ -91,7 +97,8 @@ class App extends Component {
        })
     }
 
-    let ProjectData=[];
+    let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
+
     for (let d in this.state.project) {
       ProjectData.push({
         imageURL: this.state.project[d]["gsx$imagesource"]["$t"] ? this.state.project[d]["gsx$imagesource"]["$t"] : null,
@@ -102,14 +109,11 @@ class App extends Component {
        })
     }
 
-    let InstaData=[];
     for (let d in this.state.insta) {
       InstaData.push({
         imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"]
        })
     }
-
-    let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
 
     let numberOfInsta = HomeDataSorted.filter((d) => d.ID === "Instagram");
     let indexInsta = 0;
@@ -127,7 +131,7 @@ class App extends Component {
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
 
     return (
-      <div className="App" >
+      <div className="App">
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
@@ -142,4 +146,4 @@ class App extends Component {
   }
 }
 
-export default GameLoop(App);
+export default App;
