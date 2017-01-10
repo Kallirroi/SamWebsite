@@ -19,7 +19,7 @@ class Item extends React.Component {
 	}
 
 	componentWillUnmount(){
-		this.ref.removeEventListener('click', this.showDetails);
+		this.ref.removeEventListener('click', this.showDetails, true);
 	}	
 
 	showDetails(e) {
@@ -39,7 +39,7 @@ class Item extends React.Component {
 		let classNameItemType = this.state.isMouseInside ? "ItemType" : "ItemTypeIsHidden";
 		let classNameItemDetails = this.state.isMouseInside ? "ItemDetailsIsHidden" : "ItemDetails";
 		return (
-	        <div className={this.props.type} ref={ref => { this.ref = ref; }} onClick={this.showDetails}  onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} > 
+	        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
 	        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>
 	        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety} /> 
 	        	<div className={classNameItemType}> 

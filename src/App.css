@@ -63,8 +63,11 @@ position: absolute;
 left: 0.5vw;
 top: 1vh;
 font-weight: 400;
-line-height: 1.1em;
+line-height: 1em;
 word-wrap: break-word;
+}
+
+.ItemDetails > p {
 }
 
 .ItemType {
@@ -121,6 +124,7 @@ cursor: url(cursor_hover.png), auto;
 position: relative;
 margin: 0 auto;
 margin-bottom: 2vh;
+border: 1px solid black;
 }
 
 .Project > img {
@@ -128,8 +132,9 @@ box-shadow: 3px 3px 11px 0px #FF007F;
 /*width: 60vw;*/
 }
 
-.Project > .ItemDetails {
+.Project > .ItemDetails, .ItemType {
   width: 30vw;
+  color: #FF007F;
 }
 
 .Research {
@@ -139,6 +144,7 @@ box-shadow: 3px 3px 11px 0px #FF007F;
   width: 40vw;
   margin: 0 auto;
   margin-bottom: 2vh;
+border: 1px solid black;
 
 }
 
@@ -147,12 +153,17 @@ box-shadow: 3px 3px 11px 0px #FF007F;
   width: 40vw;
 }
 
+.Research > .ItemDetails, .ItemType {
+  color: #00f;
+}
+
 .Instagram {
   cursor: url(cursor_hover.png), auto;
   position: relative;
   width: 20em;
   margin: 0 auto;
   left: 7vw;
+border: 1px solid black;
 
 }
 .Instagram > img {
@@ -160,16 +171,22 @@ box-shadow: 3px 3px 11px 0px #FF007F;
   width: 20em;
 }
 
-.Instagram > .ItemDetails {
+.Instagram > .ItemDetails, .ItemType {
   font-size: 1.4em;
+  color: #cdfe00;
 }
 
 .Soundcloud {
-cursor: url(cursor_hover.png), auto;
+  cursor: url(cursor_hover.png), auto;
   position: relative;
   left: 38vw;
   width: 20vw;
   margin: 0 auto;
+border: 1px solid black;
+}
+
+.Soundcloud > .ItemType {
+  visibility: hidden;
 }
 
 .Soundcloud > .player {
