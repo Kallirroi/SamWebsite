@@ -1,266 +1,268 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 body {
-  cursor: url(cursor.png), auto;
+cursor: url(cursor.png), auto;
 }
 
 .App {
-  text-align: left;
-  font-family: Karla;
-  color: #00f;
-  cursor: url(cursor.png), auto;
-  overflow-x: hidden;
+text-align: left;
+font-family: Karla;
+color: #00f;
+cursor: url(cursor.png), auto;
+overflow-x: hidden;
 }
 
-.TestIsHidden {
-	visibility: hidden;
-}
 
-.TestIsVisible {
-	visibility: visible;
-}
 /* -----------------------------------------Title*/
 
 .Title {
-  left: 2vw;
-  color: #222;
-  display: block;
-  position: fixed;
-  line-height: 10vh;
-  vertical-align: middle;
-  font-size: 10em;
-  font-weight: 700;
-  z-index: 100;
-  text-transform: uppercase;
-  top: 2vh;
+left: 2vw;
+color: #222;
+display: block;
+position: fixed;
+line-height: 10vh;
+vertical-align: middle;
+font-size: 10em;
+font-weight: 700;
+z-index: 100;
+text-transform: uppercase;
+top: 2vh;
 }
 .Title:hover {
-	opacity: 0;
+opacity: 0;
 }
 
 /* -----------------------------------------Button*/
 .ButtonIsVisible {
-	visibility: visible;	
-	position: fixed;
-	left: 80vw;
-	cursor: url(cursor_hover.png), auto;
-	display: block;
-    line-height: 10vh;
-    vertical-align: middle;
+visibility: visible;	
+position: fixed;
+left: 80vw;
+cursor: url(cursor_hover.png), auto;
+display: block;
+  line-height: 10vh;
+  vertical-align: middle;
 }
 .ButtonIsVisible:hover {
-	font-weight: 700;
+font-weight: 700;
 }
 .ButtonIsHidden {
-	visibility: hidden;
+visibility: hidden;
 }
 
 /* -----------------------------------------Home page*/
 
 .Item  {
-  height: auto;
-  font-size: 1em;
-  line-height: 2em;
+height: auto;
+font-size: 1em;
+line-height: 2em;
 }
 
 .ItemDetails, .ItemType {
-  font-size: 1em;
-  position: relative;
-  left: 0.5vw;
-  top: 0;
-  margin-bottom: 2vh;
-  margin-top: 1vh;
-  font-weight: 400;
-  line-height: 1.1em;
+font-size: 2em;
+position: absolute;
+left: 0.5vw;
+top: 1vh;
+font-weight: 400;
+line-height: 1.1em;
+word-wrap: break-word;
 }
 
 .ItemType {
-	font-weight: 700;
- 	margin-bottom: 0vh;
+font-weight: 700;
+top: 2vh;
 }
 
 .ItemDetailsIsHidden {
-	visibility: hidden;
+visibility: hidden;
 }
 
 .ItemTypeIsHidden {
-	visibility: hidden;
+visibility: hidden;
 }
 /* -----------------------------------------Anxiety*/
 
 .ImagesAnxiety {
-  animation: moveAround 0.2s ease-in-out infinite;
+animation: moveAround 0.2s ease-in-out infinite;
 }
 
 .ImagesNoAnxiety {
-  animation: none;
+animation: none;
 }
 
 /*@keyframes toggleOpacity {
-  20% { opacity: 1; } 
-  20.001% { opacity: 0.2;}
-  54.999% { opacity: 0.2;} 
-  55% { opacity: 1; }
+20% { opacity: 1; } 
+20.001% { opacity: 0.2;}
+54.999% { opacity: 0.2;} 
+55% { opacity: 1; }
 }*/
 
 @keyframes moveAround {
-  20.001% { 
-    margin-left: 0.1vw; 
-  }
+20.001% { 
+  margin-left: 0.1vw; 
+}
 
-  40.001% {
-    margin-left: 0vw;
-  }  
+40.001% {
+  margin-left: 0vw;
+}  
 
-  40.002% {
-    margin-bottom: 0.1vh;
-  }
+40.002% {
+  margin-bottom: 0.1vh;
+}
 
-  64.999% { 
-    margin-bottom: 0vh;
-    } /* Turn back on */
+64.999% { 
+  margin-bottom: 0vh;
+  } /* Turn back on */
 }
 
 /* --------------------Specific types of home items*/
 
 .Project{
-	cursor: url(cursor_hover.png), auto;
-  position: relative;
-	width: 60vw;
-	margin: 0 auto;
-	margin-bottom: 2vh;
+cursor: url(cursor_hover.png), auto;
+position: relative;
+margin: 0 auto;
+margin-bottom: 2vh;
 }
 
 .Project > img {
-  box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
-	/*width: 60vw;*/
+box-shadow: 3px 3px 11px 0px #FF007F;
+/*width: 60vw;*/
 }
+
+.Project > .ItemDetails {
+  width: 30vw;
+}
+
 .Research {
-	left: 40vw;
-	cursor: url(cursor_hover.png), auto;
-    position: relative;
-	width: 40vw;
-	margin: 0 auto;
-	margin-bottom: 2vh;
+  left: 40vw;
+  cursor: url(cursor_hover.png), auto;
+  position: relative;
+  width: 40vw;
+  margin: 0 auto;
+  margin-bottom: 2vh;
 
 }
 
 .Research  > img {
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
-	width: 40vw;
+	box-shadow: 3px 3px 11px 0px #00f;
+  width: 40vw;
 }
 
 .Instagram {
-	cursor: url(cursor_hover.png), auto;
-    position: relative;
-    width: 20em;
-	margin: 0 auto;
-	left: 7vw;
+  cursor: url(cursor_hover.png), auto;
+  position: relative;
+  width: 20em;
+  margin: 0 auto;
+  left: 7vw;
 
 }
 .Instagram > img {
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
-    width: 20em;
+	box-shadow: 3px 3px 11px 0px #cdfe00;
+  width: 20em;
 }
+
+.Instagram > .ItemDetails {
+  font-size: 1.4em;
+}
+
 .Soundcloud {
-	cursor: url(cursor_hover.png), auto;
-    position: relative;
-	left: 38vw;
-    width: 20vw;
-	margin: 0 auto;
+cursor: url(cursor_hover.png), auto;
+  position: relative;
+  left: 38vw;
+  width: 20vw;
+  margin: 0 auto;
 }
 
 .Soundcloud > .player {
-  	box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
-    width: 20vw;
+	box-shadow: 3px 3px 11px 0px #4ffad8;
+  width: 20vw;
 }
 
 .Soundcloud > iframe {
-	cursor: url(cursor_hover.png), auto;
+cursor: url(cursor_hover.png), auto;
 
 }
 
 /* -----------------------------------------Project Page*/
 
 .ProjectItem {
-  /*margin-top: 5vh;*/
-  /*margin-left: 2vw;*/
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  margin-bottom: 10vh;
-  left: 20vw;
+/*margin-top: 5vh;*/
+/*margin-left: 2vw;*/
+margin: 0 auto;
+position: relative;
+display: block;
+margin-bottom: 10vh;
+left: 20vw;
 }
 
 .ProjectItem > img {
-  width: 50vw;
-  box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+width: 50vw;
+box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 }
 
 .ProjectItemDetails {
-  font-size: 1em;
-  position: relative;
-  left: 0vw;
-  top: 0;
-  margin-bottom: 2vh;
-  font-weight: 700;
-  margin-top: 1vh;
-  width: 20em;
+font-size: 1em;
+position: relative;
+left: 0vw;
+top: 0;
+margin-bottom: 2vh;
+font-weight: 700;
+margin-top: 1vh;
+width: 20em;
 }
 
 .ProjectItemDetails-Caption {
-	font-weight: 400;
+font-weight: 400;
 }
 
 .Doc {
-  margin-bottom: 10vh;
-  box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
+margin-bottom: 10vh;
+box-shadow: 3px 3px 11px 0px rgba(50, 50, 50, 0.95);
 
 }
 
 .Doc > iframe {
-	height: 80vh;
-	cursor: url(cursor_hover.png), auto;
+height: 80vh;
+cursor: url(cursor_hover.png), auto;
 }
 
 ::-webkit-scrollbar {
-	display: none;
+display: none;
 }
 
 /* -----------------------------------------Visibility tricks*/
 
 .HomeData, .ProjectData {
-	position: absolute;
-	top: 10em;
-	margin-left: 2vw;
-	margin-bottom: 5vh;
+position: absolute;
+top: 10em;
+margin-left: 2vw;
+margin-bottom: 5vh;
 }
 
 .HomeDataIsVisible {
-	visibility: visible;
+visibility: visible;
 }
 .HomeDataIsHidden {
-	visibility: hidden;
+visibility: hidden;
 }
 
 .ProjectDataIsVisible {
-	visibility: visible;
+visibility: visible;
 }
 .ProjectDataIsHidden {
-	visibility: hidden;
+visibility: hidden;
 }
 /* -----------------------------------------Footer*/
 
 .Footer {
-	display: block;
-	font-size: 0.9em;
-	position: relative;
-	top: 105vh;
-	width: 20vw;
-    left: 85vw;
-    visibility: hidden;
+display: block;
+font-size: 0.9em;
+position: relative;
+top: 105vh;
+width: 20vw;
+  left: 85vw;
+  visibility: hidden;
 }
 
 .Footer > a{
-	color: #00f;
+color: #00f;
 }
