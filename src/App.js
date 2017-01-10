@@ -36,8 +36,8 @@ class App extends Component {
     let projectSheetID = "1xOGhLytCsgq9vfEtvp-hWEY8fLpJ7R7ub-9JlixXqZk";
     let projectURL = "https://spreadsheets.google.com/feeds/list/"+projectSheetID+"/od6/public/values?alt=json";
     let tokenArchmixes = "4115475317.1677ed0.a5b9b5c9f86845aeaaa5ac24eb809956";
-    let tokenSam = "40791457.1677ed0.b66f37fd8f31410985a1af840ab26655";
-    let tokenKalli = "2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475";
+    // let tokenSam = "40791457.1677ed0.b66f37fd8f31410985a1af840ab26655";
+    // let tokenKalli = "2879221.d704506.df9f8ee676ea4c0fbcd6d86f98750475";
     let instaURL = "https://api.instagram.com/v1/users/self/media/recent/?access_token="+tokenArchmixes+"&callback=?";
     
     $.getJSON(homeURL, function (data) {
@@ -82,7 +82,7 @@ class App extends Component {
     let ProjectData=[];
     let InstaData=[];
 
-    for (let d in this.state.home) {
+    for (let d = 0; d<this.state.home.length; d++) {
       HomeData.push({
         imageURL: this.state.home[d]["gsx$imagesource"]["$t"] ? this.state.home[d]["gsx$imagesource"]["$t"] : null,
         type:  this.state.home[d]["gsx$type"]["$t"],
@@ -100,7 +100,7 @@ class App extends Component {
 
     let HomeDataSorted = HomeData.sort((a,b)=> a.priority - b.priority);
 
-    for (let d in this.state.project) {
+    for (let d = 0; d<this.state.project.length; d++) {
       ProjectData.push({
         imageURL: this.state.project[d]["gsx$imagesource"]["$t"] ? this.state.project[d]["gsx$imagesource"]["$t"] : null,
         caption:  this.state.project[d]["gsx$caption"]["$t"],
@@ -110,7 +110,7 @@ class App extends Component {
        })
     }
 
-    for (let d in this.state.insta) {
+    for (let d = 0; d<this.state.insta.length; d++) {
       InstaData.push({
         imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"],
         details1: this.state.insta[d]["caption"] != null ? this.state.insta[d]["caption"]["text"] : null
