@@ -36,8 +36,8 @@ class Item extends React.Component {
 
 
 	render() {
-		let classNameItemType = this.state.isMouseInside ? "ItemType" : "ItemTypeIsHidden";
-		let classNameItemDetails = this.state.isMouseInside ? "ItemDetailsIsHidden" : "ItemDetails";
+		let classNameItemType = this.state.isMouseInside ? "ItemType" : "ItemType ItemTypeIsHidden";
+		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails ItemDetailsIsHidden" : "ItemDetails";
 		return (
 	        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
 	        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>

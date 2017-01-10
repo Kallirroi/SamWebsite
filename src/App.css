@@ -62,7 +62,7 @@ font-size: 2em;
 position: absolute;
 left: 0.5vw;
 top: 1vh;
-font-weight: 400;
+font-weight: 700;
 line-height: 1em;
 word-wrap: break-word;
 }
@@ -71,7 +71,6 @@ word-wrap: break-word;
 }
 
 .ItemType {
-font-weight: 700;
 top: 2vh;
 }
 
@@ -235,7 +234,6 @@ position: relative;
 left: 0vw;
 top: 0;
 margin-bottom: 2vh;
-font-weight: 700;
 margin-top: 1vh;
 width: 20em;
 }
