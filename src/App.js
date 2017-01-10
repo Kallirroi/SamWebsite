@@ -22,8 +22,11 @@ class App extends Component {
     }
     this.backHome=this.backHome.bind(this);
     this.selectItem=this.selectItem.bind(this);
+    this.anxiety=this.anxiety.bind(this);
   }
-
+  componentWillMount() {
+    this.anxiety(this.props);
+  }
   componentDidMount() {
     let _this = this;
     let homeSheetID = "1f-VK6GAJciN5-p4uCWMUllY9_6HRgnr8yoQBv8AaoT4";
@@ -47,8 +50,11 @@ class App extends Component {
        _this.setState({insta: data.data});
     });
 
-  }
 
+  }
+ componentWillUpdate() {
+    this.anxiety(this.props);
+  }
   backHome() {
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
@@ -63,6 +69,9 @@ class App extends Component {
     window.scrollTo(0, 0);
   }
 
+  anxiety(props) {
+    console.log(props.time);
+  }
 
   render() {
     let HomeData=[];
@@ -116,8 +125,9 @@ class App extends Component {
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
+
     return (
-      <div className="App">
+      <div className="App" >
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 

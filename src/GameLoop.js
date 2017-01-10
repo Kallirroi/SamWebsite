@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const FPS = 1;
+const FPS = 0.5;
 
 const GameLoop = ChildComponent => class extends Component {
   constructor() {
