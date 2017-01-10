@@ -5,7 +5,9 @@
   font-family: Karla;
   color: #00f;
   cursor: crosshair;
+  overflow-x: hidden;
 }
+/* -----------------------------------------Title*/
 
 .Title {
   margin-left: 2vw;
@@ -25,6 +27,7 @@
 	margin-top: 5vh;
 }
 
+/* -----------------------------------------Button*/
 .ButtonIsVisible {
 	visibility: visible;	
 	position: fixed;
@@ -35,17 +38,18 @@
     vertical-align: middle;
 }
 .ButtonIsVisible:hover {
-	left: 81vw;
 	font-weight: 700;
 }
 .ButtonIsHidden {
 	visibility: hidden;
 }
 
+/* -----------------------------------------Home page*/
 
 .Item  {
   height: auto;
   font-size: 16px;
+  pointer-events: visible;
 }
 
 .ItemDetails {
@@ -56,62 +60,77 @@
   margin-bottom: 2vh;
   margin-top: 1vh;
   font-weight: 700;
-  top: -10vh;
 }
 
-.ItemDetails:hover {
-  left: 2vw;
-  color: #222;
-}
+
+/* --------------------Specific types of home items*/
 
 .Project{
-	left: 4vw;
 	cursor: pointer;
     position: relative;
-    z-index: 2;
 	width: 60vw;
+	border: 10px solid #00f;
+	margin: 0 auto;
+	margin-bottom: 2vh;
 }
 
 .Project > img {
 	width: 60vw;
 }
 .Research {
-	left: 60vw;
+	left: 40vw;
 	cursor: pointer;
     position: relative;
-    z-index: 1;
+	border: 10px solid pink;
+	width: 40vw;
+	margin: 0 auto;
+	margin-bottom: 2vh;
+}
+
+.Research  > img {
+	width: 40vw;
 }
 
 .Instagram {
-	left: 10vw;
 	cursor: pointer;
     position: relative;
-    z-index: 0;
+    width: 20em;
+	border: 10px solid cyan;
+	margin: 0 auto;
+	left: 7vw;
+	margin-bottom: 2vh;
 }
 .Instagram > img {
     width: 20em;
-
 }
 .Soundcloud {
 	cursor: pointer;
     position: relative;
-	left: 70vw;
-    z-index: -1;
+	left: 38vw;
     width: 20vw;
+	border: 10px solid orange;
+	margin: 0 auto;
+	margin-bottom: 2vh;
 }
 
 .Soundcloud > img {
-	visibility: hidden
+    width: 20vw;
 }
+
+/* -----------------------------------------Project Page*/
 
 .ProjectItem {
   /*margin-top: 5vh;*/
   /*margin-left: 2vw;*/
-  margin-left: 30vw;
+  margin: 0 auto;
   position: relative;
   display: block;
 }
 
+.ProjectItem > img {
+ 	width: 50vw;
+
+}
 
 .ProjectItemDetails {
   font-size: 1em;
@@ -126,6 +145,8 @@
 .Doc {
   margin-bottom: 2vh;
 }
+
+/* -----------------------------------------Visibility tricks*/
 
 .HomeData, .ProjectData {
 	position: absolute;
@@ -147,6 +168,7 @@
 .ProjectDataIsHidden {
 	visibility: hidden;
 }
+/* -----------------------------------------Footer*/
 
 .Footer {
 	display: block;
