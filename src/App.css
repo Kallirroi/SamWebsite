@@ -4,6 +4,26 @@ body {
   cursor: url(cursor.png), auto;
 }
 
+.ImagesAnxiety {
+  animation: moveAround 0.2s ease-in-out infinite;
+}
+
+.ImagesNoAnxiety {
+  animation: none;
+}
+
+@keyframes toggleOpacity {
+  20% { opacity: 1; } /* Turn off */
+  20.001% { opacity: 0.2;}
+  54.999% { opacity: 0.2;} /* Turn back on */
+  55% { opacity: 1; }
+}
+
+@keyframes moveAround {
+  20.001% { margin-left: 0.25vw;}
+  54.999% { margin-left: 0.25vw;} /* Turn back on */
+}
+
 .App {
   text-align: left;
   font-family: Karla;

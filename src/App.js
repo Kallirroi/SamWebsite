@@ -26,9 +26,11 @@ class App extends Component {
     this.selectItem=this.selectItem.bind(this);
     this.anxiety=this.anxiety.bind(this);
   }
+
   componentWillMount() {
     this.anxiety(this.props);
   }
+
   componentDidMount() {
     let _this = this;
     let homeSheetID = "1f-VK6GAJciN5-p4uCWMUllY9_6HRgnr8yoQBv8AaoT4";
@@ -51,9 +53,8 @@ class App extends Component {
     $.getJSON(instaURL, function(data) {  //couldn't use d3 because of CORS
        _this.setState({insta: data.data});
     });
-
-
   }
+
  componentWillUpdate() {
     this.anxiety(this.props);
   }
@@ -73,8 +74,8 @@ class App extends Component {
   }
 
   anxiety(props) {
-    let randomNumber = Math.floor(Math.random() * 5 + Math.random() -0.5);
-    return Math.floor(props.time/1000)%randomNumber ? "AnxietyIsHidden" : "AnxietyIsVisible";
+    let condition = Math.cos(props.time) < Math.random();
+    return condition ? "ImagesAnxiety" : "ImagesNoAnxiety";
   }
 
   render() {
@@ -133,12 +134,13 @@ class App extends Component {
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'ButtonIsHidden' : 'ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
+    
     return (
       <div className="App">
         <div className="Title"> sam ghantous </div>
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
-          {HomeDataSorted.map((d,i) => <Item selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
+          {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
         </div>
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc}  /> )} 
@@ -149,4 +151,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default GameLoop(App);
