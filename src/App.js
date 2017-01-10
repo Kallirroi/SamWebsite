@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import GameLoop from './GameLoop';
 import Item from './Item';
 import Project from './Project';
+import Title from './Title';
 import * as d3 from 'd3';
 import $ from 'jquery';
 
@@ -137,7 +138,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <div className="Title"> sam ghantous </div>
+        <Title className={this.anxiety(this.props)}/>
         <div className="Button" onClick={this.backHome} className={classButton} > back</div>
         <div className={classHome}> 
           {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 

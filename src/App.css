@@ -34,6 +34,7 @@ body {
   text-transform: uppercase;
   top: 2vh;
 }
+
 .Title:hover {
 	opacity: 0;
 }
