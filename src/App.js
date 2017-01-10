@@ -23,6 +23,7 @@ class App extends Component {
     this.backHome=this.backHome.bind(this);
     this.selectItem=this.selectItem.bind(this);
     this.anxiety=this.anxiety.bind(this);
+
   }
 
   componentWillMount() {
@@ -55,6 +56,7 @@ class App extends Component {
 
  componentWillUpdate() {
     this.anxiety(this.props);
+    
   }
 
   backHome() {

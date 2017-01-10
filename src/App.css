@@ -18,7 +18,7 @@ overflow-x: hidden;
 .Title {
 left: 2vw;
 color: #222;
-display: block;
+display: inline-block;
 position: fixed;
 line-height: 10vh;
 vertical-align: middle;
@@ -38,7 +38,7 @@ visibility: visible;
 position: fixed;
 left: 80vw;
 cursor: url(cursor_hover.png), auto;
-display: block;
+display: inline-block;
   line-height: 10vh;
   vertical-align: middle;
 }
@@ -55,6 +55,7 @@ visibility: hidden;
 height: auto;
 font-size: 1em;
 line-height: 2em;
+display: inline-block;
 }
 
 .ItemDetails, .ItemType {
@@ -124,10 +125,11 @@ position: relative;
 margin: 0 auto;
 margin-bottom: 2vh;
 border: 1px solid black;
+display: inline-block;
 }
 
 .Project > img {
-box-shadow: 3px 3px 11px 0px #FF007F;
+  box-shadow: 3px 3px 11px 0px #FF007F;
 /*width: 60vw;*/
 }
 
@@ -141,7 +143,7 @@ box-shadow: 3px 3px 11px 0px #FF007F;
 }
 
 .Research {
-  left: 40vw;
+  /*left: 40vw;*/
   cursor: url(cursor_hover.png), auto;
   position: relative;
   width: 40vw;
@@ -218,7 +220,7 @@ cursor: url(cursor_hover.png), auto;
 /*margin-left: 2vw;*/
 margin: 0 auto;
 position: relative;
-display: block;
+display: inline-block;
 margin-bottom: 10vh;
 left: 20vw;
 }
@@ -282,7 +284,7 @@ visibility: hidden;
 /* -----------------------------------------Footer*/
 
 .Footer {
-display: block;
+display: inline-block;
 font-size: 0.9em;
 position: relative;
 top: 105vh;
