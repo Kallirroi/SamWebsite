@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import GameLoop from './GameLoop';
 import Item from './Item';
 import Project from './Project';
 import * as d3 from 'd3';
@@ -41,7 +43,7 @@ class App extends Component {
       _this.setState({project: data.feed.entry});
     });    
 
-    $.getJSON(instaURL, function(data) { 
+    $.getJSON(instaURL, function(data) {  //couldn't use d3 because of CORS
        _this.setState({insta: data.data});
     });
 
@@ -130,4 +132,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default GameLoop(App);
