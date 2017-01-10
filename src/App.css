@@ -4,26 +4,6 @@ body {
   cursor: url(cursor.png), auto;
 }
 
-.ImagesAnxiety {
-  animation: moveAround 0.2s ease-in-out infinite;
-}
-
-.ImagesNoAnxiety {
-  animation: none;
-}
-
-@keyframes toggleOpacity {
-  20% { opacity: 1; } /* Turn off */
-  20.001% { opacity: 0.2;}
-  54.999% { opacity: 0.2;} /* Turn back on */
-  55% { opacity: 1; }
-}
-
-@keyframes moveAround {
-  20.001% { margin-left: 0.25vw;}
-  54.999% { margin-left: 0.25vw;} /* Turn back on */
-}
-
 .App {
   text-align: left;
   font-family: Karla;
@@ -42,17 +22,17 @@ body {
 /* -----------------------------------------Title*/
 
 .Title {
-  margin-left: 2vw;
+  left: 2vw;
   color: #222;
-  width: 11vw;
   display: block;
   position: fixed;
   line-height: 10vh;
   vertical-align: middle;
-  font-size: 1.8em;
+  font-size: 10em;
   font-weight: 700;
   z-index: 100;
-  background-color: #fff;
+  text-transform: uppercase;
+  top: 2vh;
 }
 .Title:hover {
 	opacity: 0;
@@ -105,6 +85,27 @@ body {
 
 .ItemTypeIsHidden {
 	visibility: hidden;
+}
+/* -----------------------------------------Anxiety*/
+
+.ImagesAnxiety {
+  animation: moveAround 0.2s ease-in-out infinite;
+}
+
+.ImagesNoAnxiety {
+  animation: none;
+}
+
+@keyframes toggleOpacity {
+  20% { opacity: 1; } /* Turn off */
+  20.001% { opacity: 0.2;}
+  54.999% { opacity: 0.2;} /* Turn back on */
+  55% { opacity: 1; }
+}
+
+@keyframes moveAround {
+  20.001% { margin-left: 0.25vw;}
+  54.999% { margin-left: 0.25vw;} /* Turn back on */
 }
 
 /* --------------------Specific types of home items*/
