@@ -56,7 +56,7 @@ class App extends Component {
 
  componentWillUpdate() {
     this.anxiety(this.props);
-    
+
   }
 
   backHome() {
@@ -139,7 +139,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-        <div className="Button" onClick={this.backHome} className={classButton} > back</div>
+        <div className="Button" onClick={this.backHome} className={classButton}>X</div>
         <div className={classHome}> 
           {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props, i)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
         </div>

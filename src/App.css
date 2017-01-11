@@ -45,13 +45,13 @@ animation: changeGradient 30s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-left: 40vw;
+left: 39.5vw;
 color: #00f;
 display: block;
 position: fixed;
 line-height: 10vh;
 vertical-align: middle;
-font-size: 8em;
+font-size: 7em;
 /*font-weight: 700;*/
 z-index: 100;
 top: 2vh;
@@ -67,10 +67,14 @@ opacity: 0;
 visibility: visible;	
 position: fixed;
 left: 80vw;
+width: 2vw;
+text-align: middle;
+top: 5vh;
 cursor: url(cursor_hover.png), auto;
 display: inline-block;
-  line-height: 10vh;
-  vertical-align: middle;
+line-height: 10vh;
+vertical-align: middle;
+z-index: 100;
 }
 .ButtonIsVisible:hover {
 font-weight: 700;
@@ -289,7 +293,7 @@ box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 }
 
 .ProjectItemDetails {
-font-size: 1em;
+font-size: 2em;
 position: relative;
 left: 0vw;
 top: 0;
