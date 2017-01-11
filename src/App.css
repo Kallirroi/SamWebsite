@@ -63,18 +63,23 @@ opacity: 0;
 }
 
 /* -----------------------------------------Button*/
-.ButtonIsVisible {
+.Button {
 visibility: visible;	
 position: fixed;
 left: 80vw;
 width: 2vw;
 text-align: center;
 top: 5vh;
-cursor: url(cursor_hover.png), auto;
+background: url(cursor_hover.png), auto;
+cursor: url(cursor_triangle.png), auto;
 display: inline-block;
 line-height: 10vh;
 vertical-align: middle;
 z-index: 100;
+}
+
+.ButtonIsVisible {
+  visibility: visible;
 }
 .ButtonIsVisible:hover {
 font-weight: 700;
