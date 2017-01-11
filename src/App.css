@@ -314,6 +314,7 @@ box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 
 .Doc > iframe {
 height: 80vh;
+width: 50vw;
 cursor: url(cursor_hover.png), auto;
 }
 
@@ -351,8 +352,7 @@ font-size: 0.9em;
 position: relative;
 top: 105vh;
 width: 20vw;
-  left: 85vw;
-  visibility: hidden;
+visibility: hidden;
 }
 
 .Footer > a{
