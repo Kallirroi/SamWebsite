@@ -14,7 +14,7 @@ class Project extends React.Component {
 		return (
 	        <div className="ProjectItem" ref={ref => { this.ref = ref; }} > 
 	        	<div className="Doc" dangerouslySetInnerHTML={ {__html: this.props.doc} }></div> 
-	        	<img src={this.props.imageURL} role="presentation"/> 
+	        	<img src={this.props.imageURL} role="presentation" alt="failure to load image"/> 
 	        	<div className="ProjectItemDetails" >
 	        		<div className="ProjectItemDetails-Caption">
 	        			{this.props.caption}
