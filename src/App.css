@@ -321,7 +321,7 @@ cursor: url(cursor_hover.png), auto;
 }
 
 ::-webkit-scrollbar {
-display: none;
+/*display: none;*/
 }
 
 /* -----------------------------------------Visibility tricks*/

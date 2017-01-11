@@ -68,8 +68,7 @@ class App extends Component {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-   
-    window.scrollTo(0, 0); //scroll to top of page
+    setTimeout(function() { window.scrollTo(0, 0);},10)
   }
 
   anxiety(props, i) {
