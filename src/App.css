@@ -68,14 +68,16 @@ visibility: visible;
 position: fixed;
 left: 80vw;
 width: 2vw;
+color: #FF007F;
 text-align: center;
 top: 5vh;
-background: url(cursor_hover.png), auto;
+background: url(cursor_hover.png) center no-repeat;
 cursor: url(cursor_triangle.png), auto;
 display: inline-block;
 line-height: 10vh;
 vertical-align: middle;
 z-index: 100;
+font-size: 0.1em;
 }
 
 .ButtonIsVisible {
@@ -289,7 +291,7 @@ margin: 0 auto;
 position: relative;
 display: inline-block;
 margin-bottom: 10vh;
-left: 20vw;
+left: 22vw;
 }
 
 .ProjectItem > img {
