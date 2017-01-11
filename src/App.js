@@ -68,7 +68,9 @@ class App extends Component {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-    setTimeout(function() { window.scrollTo(0, 0);},10)
+
+    let scrollAnchor = document.getElementsByClassName('scrollhere')[0];
+    setTimeout(function() { scrollAnchor.scrollIntoView();},10)
   }
 
   anxiety(props, i) {
@@ -135,6 +137,7 @@ class App extends Component {
     
     return (
       <div className="App">
+        <div className="scrollhere"></div>
         <Title />
         <div onClick={this.backHome} className={classButton}>.</div>
         <div className={classHome}> 
