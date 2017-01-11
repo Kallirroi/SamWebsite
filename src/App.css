@@ -68,7 +68,7 @@ visibility: visible;
 position: fixed;
 left: 80vw;
 width: 2vw;
-text-align: middle;
+text-align: center;
 top: 5vh;
 cursor: url(cursor_hover.png), auto;
 display: inline-block;
