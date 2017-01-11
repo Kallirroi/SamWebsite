@@ -56,7 +56,6 @@ class App extends Component {
 
  componentWillUpdate() {
     this.anxiety(this.props);
-
   }
 
   backHome() {
@@ -75,8 +74,7 @@ class App extends Component {
 
   anxiety(props, i) {
     let condition = Math.cos(props.time) > Math.random() ;
-    let randomItem = Math.floor(Math.random() * this.state.home.length);
-    return condition && i===randomItem ? "ImagesAnxiety" : "ImagesNoAnxiety";
+    return condition && i%3 ? "ImagesAnxiety" : "ImagesNoAnxiety";
   }
 
   render() {
