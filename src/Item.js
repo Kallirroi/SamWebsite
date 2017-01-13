@@ -36,14 +36,16 @@ class Item extends React.Component {
 
 
 	render() {
-		let classNameItemType = this.state.isMouseInside ? "ItemType" : "ItemType ItemTypeIsHidden";
-		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails ItemDetailsIsHidden" : "ItemDetails";
+		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType";
+		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails" : "ItemDetails ItemDetailsIsHidden";
 		return (
 	        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
 	        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>
 	        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety} /> 
-	        	<div className={classNameItemType}> 
-	        		{this.props.type} 
+	        	<div className={classNameItemType}>  {/*FLIPPING the classNameItemType with the classNameItelDetails*/}
+	        		<p>{this.props.name} </p>
+	        		<p>{this.props.type} </p>
+	        		
 	        	</div>
 	        	<div className={classNameItemDetails} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit}  > 
 	        		{this.props.details1}<br/><br/>
