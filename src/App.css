@@ -45,13 +45,13 @@ animation: changeGradient 20s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-left: 39.5vw;
+left: 41.5vw;
 color: #00f;
 display: block;
 position: fixed;
 line-height: 10vh;
 vertical-align: middle;
-font-size: 7em;
+font-size: 6em;
 /*font-weight: 700;*/
 z-index: 100;
 top: 2vh;
