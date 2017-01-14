@@ -99,6 +99,13 @@ line-height: 2em;
 display: inline-block;
 }
 
+.player > iframe{
+ box-shadow: 3px 3px 50px 0px #FF007F; 
+}
+
+.sketchfab-embed-wrapper > iframe { 
+ box-shadow: 3px 3px 50px 0px #FF007F; 
+}
 .ItemDetails, .ItemType {
 font-size: 2em;
 position: absolute;

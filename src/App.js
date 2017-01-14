@@ -130,6 +130,7 @@ class App extends Component {
     }
 
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
+    
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'Button ButtonIsHidden' : 'Button ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
