@@ -114,7 +114,8 @@ class App extends Component {
     for (let d = 0; d<this.state.insta.length; d++) {
       InstaData.push({
         imageURL: this.state.insta[d]["images"]["standard_resolution"]["url"],
-        details1: this.state.insta[d]["caption"] != null ? this.state.insta[d]["caption"]["text"] : null
+        details1: this.state.insta[d]["caption"] != null ? this.state.insta[d]["caption"]["text"] : null,
+        detailslink: this.state.insta[d]["link"]
        })
 
     }
@@ -125,12 +126,13 @@ class App extends Component {
       if (HomeDataSorted[d].ID ==="Instagram" && InstaData[indexInsta] !== undefined) {
         indexInsta < numberOfInsta.length ? HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL : 1;
         indexInsta < numberOfInsta.length ? HomeDataSorted[d].details1 = InstaData[indexInsta].details1 : 1;
+        indexInsta < numberOfInsta.length ? HomeDataSorted[d].detailslink = InstaData[indexInsta].detailslink : 1;
         ++indexInsta;
       }  
     }
 
     let ProjectDataCurrent = ProjectData.filter((d)=> d.ID === this.state.current);
-    
+
     let classProject = this.state.projectsHidden ? 'ProjectDataIsHidden' : 'ProjectData ProjectDataIsVisible';
     let classButton = this.state.projectsHidden ? 'Button ButtonIsHidden' : 'Button ButtonIsVisible';
     let classHome = this.state.homeHidden ? 'HomeDataIsHidden' : 'HomeData HomeDataIsVisible';
