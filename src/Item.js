@@ -53,8 +53,7 @@ class Item extends React.Component {
 	        		{this.props.details1}<br/><br/>
         			{this.props.details2}<br/><br/>
         			{this.props.details3}<br/><br/>
-        			{this.props.details4}<br/><br/>
-        			{this.props.details5}
+        			{this.props.details4}        			
 	        	</div> 
 	        </div>
 	    )
