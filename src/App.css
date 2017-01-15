@@ -295,11 +295,11 @@ top: -10vh;
 }
 
 .Soundcloud > .player {
-	box-shadow: 3px 3px 50px 0px #4ffad8;
+	/*box-shadow: 3px 3px 50px 0px green;*/
   width: 20vw;
 }
 
-.Soundcloud > iframe {
+.Soundcloud > .player > iframe {
   cursor: url(cursor_drag.png), auto;
   box-shadow: 3px 3px 50px 0px #4ffad8;
 
@@ -322,7 +322,7 @@ width: 70vw;
 box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 }
 
-.ProjectItemDetails {
+.ProjectItemDetails, .ProjectItemIntro {
 font-size: 2em;
 position: relative;
 left: 0vw;
@@ -330,6 +330,10 @@ top: 0;
 margin-bottom: 2vh;
 margin-top: 1vh;
 width: 20em;
+}
+
+.ProjectItemIntroIsHidden {
+  visibility: hidden;
 }
 
 .ProjectItemDetails-Caption {

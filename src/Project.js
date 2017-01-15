@@ -14,7 +14,7 @@ class Project extends React.Component {
 		return (
 	        <div className="ProjectItem" ref={ref => { this.ref = ref; }} > 
 		        <div className="ProjectItemDetails" > 
-		        	<p>Title: {this.props.name} </p>
+		        	<p>{this.props.name} </p>
 	        		{this.props.details1}<br/><br/>
         			{this.props.details2}<br/><br/>
         			{this.props.details3}<br/><br/>
@@ -35,4 +35,3 @@ class Project extends React.Component {
 
 
 export default Project;
-
