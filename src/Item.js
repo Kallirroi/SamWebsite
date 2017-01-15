@@ -10,10 +10,10 @@ class Item extends React.Component {
 		super(props);
 		this.state = {
 			isMouseInside: false,
-			activeDrags: 0,
 	        deltaPosition: {
 	          x: 0, y: 0
-	        }
+	        },
+	        readyForClick: true
 		};
 		this.showDetails=this.showDetails.bind(this);
 		this.mouseEnter = this.mouseEnter.bind(this);
@@ -24,6 +24,7 @@ class Item extends React.Component {
 	}
 
 	handleDrag(e, ui) {
+	  e.preventDefault();
       const {x, y} = this.state.deltaPosition;
       this.setState({
         deltaPosition: {
@@ -33,12 +34,14 @@ class Item extends React.Component {
       });
     }
 
-    onStart() {
-      this.setState({activeDrags: ++this.state.activeDrags});
+    onStart(e) {
+		e.preventDefault();
+		this.setState({readyForClick: false});
     }
 
-    onStop() {
-      this.setState({activeDrags: --this.state.activeDrags});
+    onStop(e) {
+		e.preventDefault();
+		this.setState({readyForClick: true});
     }
 
 	componentDidMount(){
@@ -61,7 +64,9 @@ class Item extends React.Component {
 
 	showDetails(e) {
 	 	e.preventDefault();
-        this.props.type !== "Instagram" ? this.props.selectItem(this.props.id) : window.open(this.props.detailslink, '_blank');
+        if (this.state.readyForClick) {
+        	this.props.type !== "Instagram" ? this.props.selectItem(this.props.id) : window.open(this.props.detailslink, '_blank');	
+        }
 	}  
 
 	mouseEnter = () => {
@@ -74,15 +79,14 @@ class Item extends React.Component {
 	render() {
 		const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
 		const {deltaPosition, controlledPosition} = this.state;
-
 		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; {/*FLIPPING the classNameItemType with the classNameItelDetails*/}
 		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails" : "ItemDetails ItemDetailsIsHidden";
 		return (
 		<Draggable
             zIndex={100}
-            onStart={this.handleStart}
+            onStart={this.onStart}
             onDrag={this.handleDrag}
-            onStop={this.handleStop}>
+            onStop={this.onStop}>
             <div className="box no-cursor">
 		        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
 		        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>

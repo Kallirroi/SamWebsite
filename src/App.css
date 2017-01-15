@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One'); 
 
 .App {
 text-align: left;
@@ -66,18 +66,18 @@ animation: changeGradient 20s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-left: 41.5vw;
-color: #00f;
-display: block;
-position: fixed;
-line-height: 10vh;
-vertical-align: middle;
-font-size: 6em;
-/*font-weight: 700;*/
-z-index: 100;
-top: 2vh;
-margin: 0 auto;
-letter-spacing: -0.05em;
+  font-family: 'Yatra One';
+  left: 41.5vw;
+  color: #00f;
+  display: block;
+  position: fixed;
+  line-height: 10vh;
+  vertical-align: middle;
+  font-size: 6em;
+  z-index: 100;
+  top: 2vh;
+  margin: 0 auto;
+  letter-spacing: -0.05em;
 }
 .Title:hover {
 opacity: 0;
@@ -319,7 +319,7 @@ left: 12vw;
 
 .ProjectItem > img {
 width: 70vw;
-box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
+box-shadow: 3px 3px 50px 0px #00f;
 }
 
 .ProjectItemDetails, .ProjectItemIntro {
@@ -342,7 +342,7 @@ font-weight: 400;
 
 .Doc {
 margin-bottom: 10vh;
-box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
+box-shadow: 3px 3px 50px 0px #00f;
 
 }
 
