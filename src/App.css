@@ -131,6 +131,7 @@ display: inline-block;
 .sketchfab-embed-wrapper > iframe { 
  box-shadow: 3px 3px 50px 0px #FF007F; 
 }
+
 .ItemDetails, .ItemType {
 font-size: 2em;
 position: absolute;
@@ -138,9 +139,6 @@ left: 0.5vw;
 top: 1vh;
 font-weight: 700;
 line-height: 1em;
-}
-
-.ItemDetails > p {
 }
 
 .ItemType {
@@ -220,16 +218,16 @@ animation: none;
 /* --------------------Specific types of home items*/
 
 .Project{
-cursor: url(cursor_hover.png), auto;
+cursor: url(cursor_drag.png), auto;
 position: relative;
 margin: 0 auto;
 margin-bottom: 2vh;
 display: inline-block;
+top: -10vh;
 }
 
 .Project > img {
   box-shadow: 3px 3px 50px 0px #FF007F;
-/*width: 60vw;*/
 }
 
 .Project > .ItemDetails{
@@ -242,9 +240,9 @@ display: inline-block;
 }
 
 .Research {
-  /*left: 40vw;*/
-  cursor: url(cursor_hover.png), auto;
+  cursor: url(cursor_drag.png), auto;
   position: relative;
+  top: -10vh;
   width: 40vw;
   margin: 0 auto;
   margin-bottom: 2vh;
@@ -265,11 +263,12 @@ display: inline-block;
 }
 
 .Instagram {
-  cursor: url(cursor_hover.png), auto;
+  cursor: url(cursor_drag.png), auto;
   position: relative;
   display: inline-block;
   margin: 0 auto;
-  left: 7vw;
+  left: 10vw;
+  top: -10vh;
 }
 .Instagram > img {
 	box-shadow: 3px 3px 50px 0px #cdfe00;
@@ -287,12 +286,12 @@ display: inline-block;
 }
 
 .Soundcloud {
-  cursor: url(cursor_hover.png), auto;
+  cursor: url(cursor_drag.png), auto;
   position: relative;
-  left: 38vw;
+  left: 28vw;
   width: 20vw;
   margin: 0 auto;
-
+  top: -50vh;
 }
 
 .Soundcloud > .ItemType {
@@ -305,7 +304,8 @@ display: inline-block;
 }
 
 .Soundcloud > iframe {
-cursor: url(cursor_hover.png), auto;
+  cursor: url(cursor_drag.png), auto;
+  box-shadow: 3px 3px 50px 0px #4ffad8;
 
 }
 
@@ -349,7 +349,7 @@ box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, 0.95);
 .Doc > iframe {
 height: 80vh;
 width: 70vw;
-cursor: url(cursor_hover.png), auto;
+cursor: url(cursor_drag.png), auto;
 }
 
 ::-webkit-scrollbar {
@@ -399,5 +399,5 @@ font-weight: 700;
 }
 
 .Footer > a:hover {
-cursor: url(cursor_hover.png), auto;
+cursor: url(cursor_drag.png), auto;
 }
