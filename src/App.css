@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
-body {
-cursor: url(cursor.png), auto;
-
-}
 
 .App {
 text-align: left;
 font-family: Karla;
 color: #00f;
-cursor: url(cursor.png), auto;
+cursor: url(cursor_triangle.png), auto;
 overflow-x: hidden;
 box-sizing: border-box;
 background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
