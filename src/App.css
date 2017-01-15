@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One'); 
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One|Space+Mono:400+600'); 
 
 .App {
 text-align: left;
@@ -66,18 +66,19 @@ animation: changeGradient 20s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-  font-family: 'Cousine';
+  font-family: 'Space Mono';
   left: 41.5vw;
+  font-weight: 600;
   color: #00f;
   display: block;
   position: fixed;
   line-height: 10vh;
   vertical-align: middle;
-  font-size: 6em;
+  font-size: 5.4em;
   z-index: 100;
   top: 2vh;
   margin: 0 auto;
-  letter-spacing: -0.05em;
+  letter-spacing: 0em;
 }
 .Title:hover {
 opacity: 0;
@@ -121,10 +122,6 @@ display: inline-block;
 }
 
 .player > iframe{
- box-shadow: 3px 3px 50px 0px #FF007F; 
-}
-
-.sketchfab-embed-wrapper > iframe { 
  box-shadow: 3px 3px 50px 0px #FF007F; 
 }
 
