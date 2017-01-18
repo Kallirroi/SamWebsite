@@ -64,7 +64,7 @@ class App extends Component {
      this.setState({current: ""});
   }
 
-  selectItem(element) {
+  selectItem(element, coordinateY) {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});

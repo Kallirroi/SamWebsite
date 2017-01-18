@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One|Space+Mono:400+600'); 
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One|Space+Mono:400+600');
 
 .App {
 text-align: left;
-font-family: Karla;
+font-family: 'Karla';
 color: #00f;
 cursor: url(cursor_triangle.png), auto;
 overflow-x: hidden;
@@ -66,7 +66,7 @@ animation: changeGradient 20s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-  font-family: 'Space Mono';
+  font-family: 'Poppins';
   left: 41.5vw;
   font-weight: 600;
   color: #00f;

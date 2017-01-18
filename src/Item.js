@@ -64,8 +64,10 @@ class Item extends React.Component {
 
 	showDetails(e) {
 	 	e.preventDefault();
+	 	let coordinateY = e.clientY;
+	 	console.log(coordinateY);
         if (this.state.readyForClick) {
-        	this.props.type !== "Instagram" ? this.props.selectItem(this.props.id) : window.open(this.props.detailslink, '_blank');	
+        	this.props.type !== "Instagram" ? this.props.selectItem(this.props.id, coordinateY) : window.open(this.props.detailslink, '_blank');	
         }
 	}  
 
