@@ -133,9 +133,9 @@ class App extends Component {
     let indexInsta = 0;
     for (let d in HomeDataSorted) {
       if (HomeDataSorted[d].ID ==="Instagram" && InstaData[indexInsta] !== undefined) {
-        indexInsta < numberOfInsta.length ? HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL : 1;
-        indexInsta < numberOfInsta.length ? HomeDataSorted[d].details1 = InstaData[indexInsta].details1 : 1;
-        indexInsta < numberOfInsta.length ? HomeDataSorted[d].detailslink = InstaData[indexInsta].detailslink : 1;
+        if (indexInsta < numberOfInsta.length) { HomeDataSorted[d].imageURL = InstaData[indexInsta].imageURL; }
+        if (indexInsta < numberOfInsta.length) { HomeDataSorted[d].details1 = InstaData[indexInsta].details1;}
+        if (indexInsta < numberOfInsta.length) { HomeDataSorted[d].detailslink = InstaData[indexInsta].detailslink; }
         ++indexInsta;
       }  
     }

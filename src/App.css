@@ -352,6 +352,7 @@ width: 70vw;
 cursor: url(cursor_drag.png), auto;
 }
 
+
 ::-webkit-scrollbar {
 /*display: none;*/
 }

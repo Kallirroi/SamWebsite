@@ -73,7 +73,7 @@ class Item extends React.Component {
 	}
 
 	render() {
-		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; {/*FLIPPING the classNameItemType with the classNameItelDetails*/}
+		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; 
 		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails" : "ItemDetails ItemDetailsIsHidden";
 		return (
 			<Draggable zIndex={100} onStart={this.onStart} onDrag={this.handleDrag} onStop={this.onStop}>
@@ -97,11 +97,6 @@ class Item extends React.Component {
 	    )
 	}
 }
-
-
-
-{/*<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/79366ddaf0964a819452165c06fb37f5/embed?autostart=1&amp;preload=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
-</div>*/}
 
 export default Item;
 
