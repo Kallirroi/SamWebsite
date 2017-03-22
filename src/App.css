@@ -41,30 +41,30 @@ animation: changeGradient 10s ease-in-out infinite;
 }
 
 /* -----------------------------------------Draggable*/
-    .react-draggable, .cursor {
-      cursor: move;
-    }
-    .no-cursor {
-      cursor: auto;
-    }
-    .cursor-y {
-      cursor: ns-resize;
-    }
-    .cursor-x {
-      cursor: ew-resize;
-    }
-    .react-draggable strong {
-      background: #ddd;
-      border: 1px solid #999;
-      border-radius: 3px;
-      display: block;
-      margin-bottom: 10px;
-      padding: 3px 5px;
-      text-align: center;
-    }
-    .box {
-      box-sizing: border-box;
-    }
+  .react-draggable, .cursor {
+    cursor: move;
+  }
+  .no-cursor {
+    cursor: auto;
+  }
+  .cursor-y {
+    cursor: ns-resize;
+  }
+  .cursor-x {
+    cursor: ew-resize;
+  }
+  .react-draggable strong {
+    background: #ddd;
+    border: 1px solid #999;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+    text-align: center;
+  }
+  .box {
+    box-sizing: border-box;
+  }
 /* -----------------------------------------Title*/
 
 .Title {
@@ -88,65 +88,65 @@ opacity: 0;
 
 /* -----------------------------------------Button*/
 .Button {
-visibility: visible;	
-position: fixed;
-left: 85vw;
-width: 3vw;
-color: #FF007F;
-text-align: center;
-top: 5vh;
-background: url(button.png) center no-repeat;
-cursor: url(cursor_triangle.png), auto;
-display: inline-block;
-line-height: 10vh;
-vertical-align: middle;
-z-index: 100;
-font-size: 0.1em;
+  visibility: visible;	
+  position: fixed;
+  left: 85vw;
+  width: 3vw;
+  color: #FF007F;
+  text-align: center;
+  top: 5vh;
+  background: url(button.png) center no-repeat;
+  cursor: url(cursor_triangle.png), auto;
+  display: inline-block;
+  line-height: 10vh;
+  vertical-align: middle;
+  z-index: 100;
+  font-size: 0.1em;
 }
 
 .ButtonIsVisible {
   visibility: visible;
 }
 .ButtonIsVisible:hover {
-left: 85.5vw;
+  left: 85.5vw;
 }
 .ButtonIsHidden {
-visibility: hidden;
+  visibility: hidden;
 }
 
 /* -----------------------------------------Home page*/
 
 .Item  {
-height: auto;
-font-size: 1em;
-line-height: 2em;
-display: inline-block;
-position: relative;
+  height: auto;
+  font-size: 1em;
+  line-height: 2em;
+  display: inline-block;
+  position: relative;
 }
 
 .player > iframe{
- box-shadow: 3px 3px 50px 0px #FF007F; 
+   box-shadow: 3px 3px 50px 0px #FF007F; 
 }
 
 .ItemDetails, .ItemType {
-font-size: 2em;
-position: absolute;
-left: 0.5vw;
-top: 1vh;
-font-weight: 700;
-line-height: 1em;
+  font-size: 2em;
+  position: absolute;
+  left: 0.5vw;
+  top: 1vh;
+  font-weight: 700;
+  line-height: 1em;
 }
 
 .ItemType {
-top: 2vh;
+  top: 2vh;
 }
 
 .ItemDetailsIsHidden {
-visibility: hidden;
+  visibility: hidden;
 }
 
 .ItemTypeIsHidden {
-visibility: hidden;
+  visibility: hidden;
 }
 /* -----------------------------------------Anxiety*/
 
@@ -213,13 +213,13 @@ animation: none;
 
 /* --------------------Specific types of home items*/
 
-.Project{
-cursor: url(cursor_drag.png), auto;
-position: relative;
-margin: 0 auto;
-margin-bottom: 2vh;
-display: inline-block;
-top: -10vh;
+.Project {
+  cursor: url(cursor_drag.png), auto;
+  position: relative;
+  /*margin: 0 auto;*/
+  margin-bottom: 2vh;
+  /*top: -10vh;*/
+  display: inline-block;
 }
 
 .Project > img {
@@ -238,10 +238,11 @@ top: -10vh;
 .Research {
   cursor: url(cursor_drag.png), auto;
   position: relative;
-  top: -10vh;
+  /*top: -10vh;*/
   width: 40vw;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   margin-bottom: 2vh;
+  display: inline-block;;
 }
 
 .Research  > img {
@@ -262,9 +263,8 @@ top: -10vh;
   cursor: url(cursor_drag.png), auto;
   position: relative;
   display: inline-block;
-  margin: 0 auto;
-  left: 10vw;
-  top: -10vh;
+/*  left: 10vw;
+  top: -10vh;*/
 }
 .Instagram > img {
 	box-shadow: 3px 3px 50px 0px #cdfe00;
@@ -284,10 +284,10 @@ top: -10vh;
 .Soundcloud {
   cursor: url(cursor_drag.png), auto;
   position: relative;
-  left: 28vw;
+  /*left: 28vw;*/
   width: 20vw;
-  margin: 0 auto;
-  top: -50vh;
+  display: inline-block;;
+  /*top: -50vh;*/
 }
 
 .Soundcloud > .ItemType {
@@ -302,34 +302,33 @@ top: -10vh;
 .Soundcloud > .player > iframe {
   cursor: url(cursor_drag.png), auto;
   box-shadow: 3px 3px 50px 0px #4ffad8;
-
 }
 
 /* -----------------------------------------Project Page*/
 
 .ProjectItem {
-/*margin-top: 5vh;*/
-/*margin-left: 2vw;*/
-margin: 0 auto;
-position: relative;
-display: inline-block;
-margin-bottom: 10vh;
-left: 12vw;
+  /*margin-top: 5vh;*/
+  /*margin-left: 2vw;*/
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10vh;
+  left: 12vw;
 }
 
 .ProjectItem > img {
-width: 70vw;
-box-shadow: 3px 3px 50px 0px #00f;
+  width: 70vw;
+  box-shadow: 3px 3px 50px 0px #00f;
 }
 
 .ProjectItemDetails, .ProjectItemIntro {
-font-size: 2em;
-position: relative;
-left: 0vw;
-top: 0;
-margin-bottom: 2vh;
-margin-top: 1vh;
-width: 20em;
+  font-size: 2em;
+  position: relative;
+  left: 0vw;
+  top: 0;
+  margin-bottom: 2vh;
+  margin-top: 1vh;
+  width: 20em;
 }
 
 .ProjectItemIntroIsHidden {
@@ -337,70 +336,66 @@ width: 20em;
 }
 
 .ProjectItemDetails-Caption {
-font-weight: 400;
+  font-weight: 400;
 }
 
 .Doc {
-margin-bottom: 10vh;
-box-shadow: 3px 3px 50px 0px #00f;
+  margin-bottom: 10vh;
+  box-shadow: 3px 3px 50px 0px #00f;
 
 }
 
 .Doc > iframe {
-height: 80vh;
-width: 70vw;
-cursor: url(cursor_drag.png), auto;
+  height: 80vh;
+  width: 70vw;
+  cursor: url(cursor_drag.png), auto;
 }
 
-
-::-webkit-scrollbar {
-/*display: none;*/
-}
 
 /* -----------------------------------------Visibility tricks*/
 
 .HomeData, .ProjectData {
-position: absolute;
-top: 10em;
-margin-left: 2vw;
-margin-bottom: 5vh;
+  position: absolute;
+  top: 10em;
+  margin-left: 2vw;
+  margin-bottom: 5vh;
 }
 
 .HomeDataIsVisible {
-visibility: visible;
+  visibility: visible;
 }
 .HomeDataIsHidden {
-visibility: hidden;
+  visibility: hidden;
 }
 
 .ProjectDataIsVisible {
-visibility: visible;
+  visibility: visible;
 /*display: block;*/
 }
 .ProjectDataIsHidden {
-visibility: hidden;
+  visibility: hidden;
 /*display: none;*/
 }
 /* -----------------------------------------Footer*/
 
 .Footer {
-display: inline-block;
-font-size: 0.9em;
-position: fixed;
-top: 97vh;
-left: 90vw;
-height: 2em;
-vertical-align: center;
-color: #222;
-z-index: 100;
+  display: inline-block;
+  font-size: 0.9em;
+  position: fixed;
+  top: 97vh;
+  left: 90vw;
+  height: 2em;
+  vertical-align: center;
+  color: #222;
+  z-index: 100;
 }
 
 .Footer > a{
-color: #999;
-text-decoration: none;
-font-weight: 700;
+  color: #999;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .Footer > a:hover {
-cursor: url(cursor_drag.png), auto;
+  cursor: url(cursor_drag.png), auto;
 }

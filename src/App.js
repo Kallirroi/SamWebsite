@@ -5,7 +5,6 @@ import Item from './Item';
 import Project from './Project';
 import Title from './Title';
 import $ from 'jquery';
-
 import './App.css';
 
 

@@ -73,12 +73,16 @@ class Item extends React.Component {
 	}
 
 	render() {
+		const divStyle = {
+		  left: this.props.type==='Project' ? (Math.cos(this.props.index) +1) * 7 + 'vw' : (Math.cos(this.props.index) +1) * 30 + 'vw',
+		  top: (Math.sin(this.props.index) -1) * 10 + 'vh' 
+		};		
 		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; 
 		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails" : "ItemDetails ItemDetailsIsHidden";
 		return (
 			<Draggable zIndex={100} onStart={this.onStart} onDrag={this.handleDrag} onStop={this.onStop}>
 	            <div className="box no-cursor">
-			        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
+			        <div style={divStyle} className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
 			        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>
 			        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety}/>
 			        	<div className={classNameItemType}>  
