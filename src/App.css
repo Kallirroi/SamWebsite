@@ -217,7 +217,6 @@ animation: none;
   cursor: url(cursor_drag.png), auto;
   position: relative;
   /*margin: 0 auto;*/
-  margin-bottom: 2vh;
   /*top: -10vh;*/
   display: inline-block;
 }
@@ -241,7 +240,6 @@ animation: none;
   /*top: -10vh;*/
   width: 40vw;
   /*margin: 0 auto;*/
-  margin-bottom: 2vh;
   display: inline-block;;
 }
 
