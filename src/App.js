@@ -18,7 +18,8 @@ class App extends Component {
       insta: {},
       current: "",
       projectsHidden: true,
-      homeHidden: false
+      homeHidden: false,
+      coordinateY: 0
     }
     this.backHome=this.backHome.bind(this);
     this.selectItem=this.selectItem.bind(this);
@@ -52,6 +53,7 @@ class App extends Component {
     $.getJSON(instaURL, function(data) {  
        _this.setState({insta: data.data});
     });
+
   }
 
  componentWillUpdate() {
@@ -59,18 +61,20 @@ class App extends Component {
   }
 
   backHome() {
+     // console.log(this.state.coordinateY)
      this.setState({projectsHidden: !this.state.projectsHidden});
      this.setState({homeHidden: !this.state.homeHidden});
      this.setState({current: ""});
+     window.scrollTo(0, this.state.coordinateY); 
   }
 
   selectItem(element, coordinateY) {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-
+    this.setState({coordinateY: coordinateY});
     let scrollAnchor = document.getElementsByClassName('scrollhere')[0];
-    setTimeout(function() { scrollAnchor.scrollIntoView();},10)
+    scrollAnchor.scrollIntoView();
   }
 
   anxiety(props, i) {
@@ -148,7 +152,7 @@ class App extends Component {
         <Title />
         <div onClick={this.backHome} className={classButton}>.</div>
         <div className={classHome}> 
-          {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props, i)} selectItem={this.selectItem} key={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
+          {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props, i)} selectItem={this.selectItem} key={i} index={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 
         </div>
         <div className={classProject}> 
           {ProjectDataCurrent.map((d,i) => <Project key={i} id={d.ID} name={d.name} caption={d.caption} type={d.type} imageURL={d.imageURL} doc={d.doc} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink}  /> )} 

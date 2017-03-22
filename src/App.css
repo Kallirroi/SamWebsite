@@ -8,17 +8,16 @@ color: #00f;
 cursor: url(cursor_triangle.png), auto;
 overflow-x: hidden;
 box-sizing: border-box;
-background: linear-gradient(to bottom, #FFDCF9, #DBFFFF);
+background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);
 width: 100vw;
 height:100vh;
 display: inline-block;
 position: fixed;
-background: linear-gradient(to bottom, rgba(255, 0, 127, 0.2), rgba(205, 254, 0, 0.2), rgba(79, 250, 216, 0.2), rgba(0, 0, 255, 0.2));
 background-size: 800% 800%;
 
--webkit-animation: changeGradient 20s ease-in-out infinite;
--moz-animation: changeGradient 20s ease-in-out infinite;
-animation: changeGradient 20s ease-in-out infinite;
+-webkit-animation: changeGradient 10s ease-in-out infinite;
+-moz-animation: changeGradient 10s ease-in-out infinite;
+animation: changeGradient 10s ease-in-out infinite;
 }
 
 @-webkit-keyframes changeGradient {
@@ -37,6 +36,9 @@ animation: changeGradient 20s ease-in-out infinite;
     100%{background-position:50% 0%}
 }
 
+.scrollhere {
+  position: relative;
+}
 
 /* -----------------------------------------Draggable*/
     .react-draggable, .cursor {
@@ -119,6 +121,7 @@ height: auto;
 font-size: 1em;
 line-height: 2em;
 display: inline-block;
+position: relative;
 }
 
 .player > iframe{
@@ -371,9 +374,11 @@ visibility: hidden;
 
 .ProjectDataIsVisible {
 visibility: visible;
+/*display: block;*/
 }
 .ProjectDataIsHidden {
 visibility: hidden;
+/*display: none;*/
 }
 /* -----------------------------------------Footer*/
 

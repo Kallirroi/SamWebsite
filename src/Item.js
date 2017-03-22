@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-
-import ReactDOM from 'react-dom';
 import Draggable from 'react-draggable';
 
 class Item extends React.Component {
@@ -12,8 +10,7 @@ class Item extends React.Component {
 			isMouseInside: false,
 	        deltaPosition: {
 	          x: 0, y: 0
-	        },
-	        readyForClick: true
+	        }
 		};
 		this.showDetails=this.showDetails.bind(this);
 		this.mouseEnter = this.mouseEnter.bind(this);
@@ -64,11 +61,8 @@ class Item extends React.Component {
 
 	showDetails(e) {
 	 	e.preventDefault();
-	 	let coordinateY = e.clientY;
-	 	console.log(coordinateY);
-        if (this.state.readyForClick) {
-        	this.props.type !== "Instagram" ? this.props.selectItem(this.props.id, coordinateY) : window.open(this.props.detailslink, '_blank');	
-        }
+	 	let coordinateY = 400 * this.props.index;
+        this.props.type !== "Instagram" ? this.props.selectItem(this.props.id, coordinateY) : window.open(this.props.detailslink, '_blank');	
 	}  
 
 	mouseEnter = () => {
@@ -79,33 +73,27 @@ class Item extends React.Component {
 	}
 
 	render() {
-		const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
-		const {deltaPosition, controlledPosition} = this.state;
 		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; {/*FLIPPING the classNameItemType with the classNameItelDetails*/}
 		let classNameItemDetails = this.state.isMouseInside ? "ItemDetails" : "ItemDetails ItemDetailsIsHidden";
 		return (
-		<Draggable
-            zIndex={100}
-            onStart={this.onStart}
-            onDrag={this.handleDrag}
-            onStop={this.onStop}>
-            <div className="box no-cursor">
-		        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
-		        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>
-		        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety}/>
-		        	<div className={classNameItemType}>  
-		        		<p>{this.props.name} </p>
-		        		<p>{this.props.type} </p>
-		        	</div>
-		        	<div className={classNameItemDetails} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit}  > 
-		        		{this.props.details1}<br/><br/>
-	        			{this.props.details2}<br/><br/>
-	        			{this.props.details3}<br/><br/>
-	        			{this.props.details4}        			
-		        	</div> 
-		        </div>
-            </div>
-        </Draggable>
+			<Draggable zIndex={100} onStart={this.onStart} onDrag={this.handleDrag} onStop={this.onStop}>
+	            <div className="box no-cursor">
+			        <div className={this.props.type} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit} ref={ref => { this.ref = ref; }} onClick={this.showDetails} > 
+			        	<div className="player" dangerouslySetInnerHTML={ {__html: this.props.soundcloud} }></div>
+			        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety}/>
+			        	<div className={classNameItemType}>  
+			        		<p>{this.props.name} </p>
+			        		<p>{this.props.type} </p>
+			        	</div>
+			        	<div className={classNameItemDetails} onMouseEnter={this.mouseEnter} onMouseOut={this.mouseExit}  > 
+			        		{this.props.details1}<br/><br/>
+		        			{this.props.details2}<br/><br/>
+		        			{this.props.details3}<br/><br/>
+		        			{this.props.details4}        			
+			        	</div> 
+			        </div>
+	            </div>
+	        </Draggable>
 	    )
 	}
 }
