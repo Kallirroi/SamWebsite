@@ -67,11 +67,10 @@ class App extends Component {
      window.scrollTo(0, this.state.coordinateY); 
   }
 
-  selectItem(element, coordinateY) {
+  selectItem(element) {
     this.setState({homeHidden: true});
     this.setState({projectsHidden: false});
     this.setState({current: element});
-    this.setState({coordinateY: coordinateY});
     let scrollAnchor = document.getElementsByClassName('scrollhere')[0];
     scrollAnchor.scrollIntoView();
   }

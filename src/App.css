@@ -40,31 +40,6 @@ animation: changeGradient 10s ease-in-out infinite;
   position: relative;
 }
 
-/* -----------------------------------------Draggable*/
-  .react-draggable, .cursor {
-    cursor: move;
-  }
-  .no-cursor {
-    cursor: auto;
-  }
-  .cursor-y {
-    cursor: ns-resize;
-  }
-  .cursor-x {
-    cursor: ew-resize;
-  }
-  .react-draggable strong {
-    background: #ddd;
-    border: 1px solid #999;
-    border-radius: 3px;
-    display: block;
-    margin-bottom: 10px;
-    padding: 3px 5px;
-    text-align: center;
-  }
-  .box {
-    box-sizing: border-box;
-  }
 /* -----------------------------------------Title*/
 
 .Title {
@@ -136,6 +111,47 @@ opacity: 0;
   font-weight: 700;
   line-height: 1em;
 }
+
+.corner {
+  display: block;
+  position: absolute;
+  height: 10vh;
+  width: 9vw;
+  right: 0;
+  top: 0;
+  /*border: 1px solid red;*/
+  cursor: url(cursor_triangle.png), auto; 
+}
+
+/* Curl Top Right */
+.hvr-curl-top-right {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-curl-top-right:before {
+  pointer-events: none;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  right: 0;
+  background: white;
+  /* IE9 */
+  background: linear-gradient(225deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.1s;
+  -webkit-transition-property: width, height;
+  transition-property: width, height;
+}
+.hvr-curl-top-right:hover:before, .hvr-curl-top-right:focus:before, .hvr-curl-top-right:active:before {
+  width: 25px;
+  height: 25px;
+}
+
 
 .ItemType {
   top: 2vh;
@@ -223,6 +239,7 @@ animation: none;
 
 .Project > img {
   box-shadow: 3px 3px 50px 0px #FF007F;
+  pointer-events: none;
 }
 
 .Project > .ItemDetails{
@@ -246,6 +263,7 @@ animation: none;
 .Research  > img {
 	box-shadow: 3px 3px 50px 0px #00f;
   width: 40vw;
+  pointer-events: none;
 }
 
 .Research > .ItemDetails{
@@ -267,6 +285,7 @@ animation: none;
 .Instagram > img {
 	box-shadow: 3px 3px 50px 0px #cdfe00;
   width: 20em;
+  pointer-events: none;
 }
 
 .Instagram > .ItemDetails {
@@ -300,6 +319,7 @@ animation: none;
 .Soundcloud > .player > iframe {
   cursor: url(cursor_drag.png), auto;
   box-shadow: 3px 3px 50px 0px #4ffad8;
+  pointer-events: none;
 }
 
 /* -----------------------------------------Project Page*/
