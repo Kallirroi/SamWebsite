@@ -8,19 +8,20 @@ color: #00f;
 cursor: url(cursor_triangle.png), auto;
 overflow-x: hidden;
 box-sizing: border-box;
-background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);
+/*background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);*/
+background-image: linear-gradient(to bottom, rgba(255, 0, 127, 0.4), rgba(0, 0, 255, 0.4), rgba(79, 250, 216, 0.4), rgba(205, 254, 0, 0.4)); /*pink and blue*/
 width: 100vw;
 height:100vh;
 display: inline-block;
 position: fixed;
-background-size: 800% 800%;
+background-size: 200% 200%;
 
 -webkit-animation: changeGradient 10s ease-in-out infinite;
 -moz-animation: changeGradient 10s ease-in-out infinite;
 animation: changeGradient 10s ease-in-out infinite;
 }
 
-@-webkit-keyframes changeGradient {
+/*@-webkit-keyframes changeGradient {
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
@@ -29,7 +30,8 @@ animation: changeGradient 10s ease-in-out infinite;
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
-}
+}*/
+
 @keyframes changeGradient { 
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
