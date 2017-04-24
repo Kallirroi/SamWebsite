@@ -4,6 +4,8 @@ import GameLoop from './GameLoop';
 import Item from './Item';
 import Project from './Project';
 import Title from './Title';
+import MobileFallback from './MobileFallback';
+
 import $ from 'jquery';
 import './App.css';
 
@@ -148,6 +150,7 @@ class App extends Component {
       <div className="App">
         <div className="scrollhere"></div>
         <Title />
+        <MobileFallback />
         <div onClick={this.backHome} className={classButton}>.</div>
         <div className={classHome}> 
           {HomeDataSorted.map((d,i) => <Item imagesAnxiety={this.anxiety(this.props, i)} selectItem={this.selectItem} key={i} index={i} id={d.ID} name={d.name} type={d.type} imageURL={d.imageURL} soundcloud={d.soundcloud} details1={d.details1} details2={d.details2} details3={d.details3} details4={d.details4} detailslink={d.detailslink} /> )} 

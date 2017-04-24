@@ -16,12 +16,12 @@ display: inline-block;
 position: fixed;
 background-size: 200% 200%;
 
--webkit-animation: changeGradient 10s ease-in-out infinite;
--moz-animation: changeGradient 10s ease-in-out infinite;
-animation: changeGradient 10s ease-in-out infinite;
+-webkit-animation: changeGradient 12s ease-in-out infinite;
+-moz-animation: changeGradient 12s ease-in-out infinite;
+animation: changeGradient 12s ease-in-out infinite;
 }
 
-/*@-webkit-keyframes changeGradient {
+@-webkit-keyframes changeGradient {
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
@@ -30,7 +30,7 @@ animation: changeGradient 10s ease-in-out infinite;
     0%{background-position:50% 0%}
     50%{background-position:50% 100%}
     100%{background-position:50% 0%}
-}*/
+}
 
 @keyframes changeGradient { 
     0%{background-position:50% 0%}
@@ -39,7 +39,8 @@ animation: changeGradient 10s ease-in-out infinite;
 }
 
 .scrollhere {
-  position: relative;
+  position: fixed;
+  border: 1px solid red;
 }
 
 /* -----------------------------------------Title*/
@@ -62,6 +63,12 @@ animation: changeGradient 10s ease-in-out infinite;
 .Title:hover {
 opacity: 0;
 }
+
+/* -----------------------------------------MobileFallback*/
+.MobileFallback {
+  display: none;
+}
+
 
 /* -----------------------------------------Button*/
 .Button {
@@ -419,3 +426,33 @@ animation: none;
 .Footer > a:hover {
   cursor: url(cursor_drag.png), auto;
 }
+
+
+
+
+/* -----------------------------------------Responsive */
+/* -----------------------------------------MobileFallback */
+
+@media screen and (max-width: 64em) { 
+  .MobileFallback {
+    display: block;
+    position: relative;
+    top: calc(50vh - 50px);
+    left: calc(50vw - 150px);
+    width: 300px;
+    font-size: 2.3em;
+  }
+
+  .Title {
+    left: calc(50vw - 125px);
+    top: 5vh;
+  }
+
+  .ProjectData, .HomeData, .Button {
+    display: none;
+  }
+}
+
+
+
+

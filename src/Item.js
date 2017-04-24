@@ -14,7 +14,8 @@ class Item extends React.Component {
 		this.mouseExit = this.mouseExit.bind(this);
 	}
 
-	showDetails() {
+	showDetails(e) {
+		console.log(e.target.clientY);
         this.props.type !== "Instagram" ? this.props.selectItem(this.props.id) : window.open(this.props.detailslink, '_blank');	
 	}  
 
@@ -27,7 +28,7 @@ class Item extends React.Component {
 
 	render() {
 		const divStyle = {
-		  left: this.props.type==='Project' ? (Math.cos(this.props.index) +1) * 7 + 'vw' : (Math.cos(this.props.index) +1) * 25 + 'vw',
+		  left: this.props.type==='Project' ? (Math.cos(this.props.index) +1) * 7 + 'vw' : (Math.cos(this.props.index) +1) * 15 + 'vw',
 		  top: (Math.sin(this.props.index) -1) * 10 + 'vh' 
 		};		
 		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; 
