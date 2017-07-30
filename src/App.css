@@ -64,11 +64,6 @@ animation: changeGradient 12s ease-in-out infinite;
 opacity: 0;
 }
 
-/* -----------------------------------------MobileFallback*/
-.MobileFallback {
-  display: none;
-}
-
 
 /* -----------------------------------------Button*/
 .Button {
@@ -121,6 +116,26 @@ opacity: 0;
   line-height: 1em;
 }
 
+.ItemType {
+  top: 2vh;
+}
+
+
+/* Do not change this */
+
+.ItemDetailsIsHidden {
+  visibility: hidden;
+}
+
+.ItemTypeIsHidden {
+  visibility: hidden;
+}
+
+
+
+
+/* -------------------------------- Curl Top Right effect */
+
 .corner {
   display: block;
   position: absolute;
@@ -132,13 +147,13 @@ opacity: 0;
   cursor: url(cursor_triangle.png), auto; 
 }
 
-/* Curl Top Right */
 .hvr-curl-top-right {
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
 }
+
 .hvr-curl-top-right:before {
   pointer-events: none;
   position: absolute;
@@ -156,88 +171,87 @@ opacity: 0;
   -webkit-transition-property: width, height;
   transition-property: width, height;
 }
-.hvr-curl-top-right:hover:before, .hvr-curl-top-right:focus:before, .hvr-curl-top-right:active:before {
+
+.hvr-curl-top-right:hover:before, 
+.hvr-curl-top-right:focus:before, 
+.hvr-curl-top-right:active:before {
   width: 25px;
   height: 25px;
 }
 
 
-.ItemType {
-  top: 2vh;
-}
 
-.ItemDetailsIsHidden {
-  visibility: hidden;
-}
 
-.ItemTypeIsHidden {
-  visibility: hidden;
-}
 /* -----------------------------------------Anxiety*/
 
 .ImagesAnxiety {
-animation: moveAround 0.1s linear infinite;
+  animation: moveAround 0.1s linear infinite;
 }
 
 .ImagesNoAnxiety {
-animation: none;
+  animation: none;
 }
 
 
 @-webkit-keyframes moveAround {
-20.001% { 
-  margin-left: 0.05vw; 
+
+  20.001% { 
+    margin-left: 0.05vw; 
+  }
+
+  40.001% {
+    margin-left: 0vw;
+  }  
+
+  40.002% {
+    margin-bottom: 0.05vh;
+  }
+
+  64.999% { 
+    margin-bottom: 0vh;
+    } /* Turn back on */
 }
 
-40.001% {
-  margin-left: 0vw;
-}  
-
-40.002% {
-  margin-bottom: 0.05vh;
-}
-
-64.999% { 
-  margin-bottom: 0vh;
-  } /* Turn back on */
-}
 @-moz-keyframes moveAround {
-20.001% { 
-  margin-left: 0.05vw; 
-}
+  20.001% { 
+    margin-left: 0.05vw; 
+  }
 
-40.001% {
-  margin-left: 0vw;
-}  
+  40.001% {
+    margin-left: 0vw;
+  }  
 
-40.002% {
-  margin-bottom: 0.05vh;
-}
+  40.002% {
+    margin-bottom: 0.05vh;
+  }
 
-64.999% { 
-  margin-bottom: 0vh;
-  } /* Turn back on */
-}
+  64.999% { 
+    margin-bottom: 0vh;
+    } /* Turn back on */
+  }
+
 @keyframes moveAround {
-20.001% { 
-  margin-left: 0.05vw; 
-}
+  20.001% { 
+    margin-left: 0.05vw; 
+  }
 
-40.001% {
-  margin-left: 0vw;
-}  
+  40.001% {
+    margin-left: 0vw;
+  }  
 
-40.002% {
-  margin-bottom: 0.05vh;
-}
+  40.002% {
+    margin-bottom: 0.05vh;
+  }
 
-64.999% { 
-  margin-bottom: 0vh;
-  } /* Turn back on */
+  64.999% { 
+    margin-bottom: 0vh;
+    } /* Turn back on */
 }
 
 /* --------------------Specific types of home items*/
 
+
+/* This is the main page - different types of work e.g. projects, research, music. */
 .Project {
   cursor: url(cursor_drag.png), auto;
   position: relative;
@@ -331,7 +345,12 @@ animation: none;
   pointer-events: none;
 }
 
+
+/* -------------------------------------------------------*/
+/* -------------------------------------------------------*/
 /* -----------------------------------------Project Page*/
+/* -------------------------------------------------------*/
+/* -------------------------------------------------------*/
 
 .ProjectItem {
   /*margin-top: 5vh;*/
@@ -339,6 +358,7 @@ animation: none;
   margin: 0 auto;
   position: relative;
   display: inline-block;
+  /* vertical spacing on the project-specific pages most likely to be defined by this variable*/
   margin-bottom: 10vh;
   left: 12vw;
 }
@@ -348,6 +368,8 @@ animation: none;
   box-shadow: 3px 3px 50px 0px #00f;
 }
 
+
+/*this is the text in the project-specific page */
 .ProjectItemDetails, .ProjectItemIntro {
   font-size: 2em;
   position: relative;
@@ -366,6 +388,8 @@ animation: none;
   font-weight: 400;
 }
 
+
+/* this is styling the google sheet (if any) in the project-specific page*/
 .Doc {
   margin-bottom: 10vh;
   box-shadow: 3px 3px 50px 0px #00f;
@@ -379,7 +403,7 @@ animation: none;
 }
 
 
-/* -----------------------------------------Visibility tricks*/
+/* -----------------------------------------Visibility tricks - DO NOT CHANGE! */
 
 .HomeData, .ProjectData {
   position: absolute;
@@ -428,8 +452,6 @@ animation: none;
 }
 
 
-
-
 /* -----------------------------------------Responsive */
 /* -----------------------------------------MobileFallback */
 
@@ -451,6 +473,11 @@ animation: none;
   .ProjectData, .HomeData, .Button {
     display: none;
   }
+}
+
+
+.MobileFallback {
+  display: none;
 }
 
 

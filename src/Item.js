@@ -27,8 +27,12 @@ class Item extends React.Component {
 	}
 
 	render() {
+		// this is what controls the position of the elements on the screen
 		const divStyle = {
+		  //this controls the left indent of the element
+		  //this.props.index is the index of every Item that we see on main page 
 		  left: this.props.type==='Project' ? (Math.cos(this.props.index) +1) * 7 + 'vw' : (Math.cos(this.props.index) +1) * 15 + 'vw',
+		  //this controls the distance from top of container
 		  top: (Math.sin(this.props.index) -1) * 10 + 'vh' 
 		};		
 		let classNameItemType = this.state.isMouseInside ? "ItemType ItemTypeIsHidden" : "ItemType"; 
