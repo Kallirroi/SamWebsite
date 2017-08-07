@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
-@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One|Space+Mono:400+600');
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One:400|Space+Mono:400+600');
 
 .App {
-text-align: left;
-font-family: 'Karla';
-color: #00f;
-cursor: url(cursor_triangle.png), auto;
-overflow-x: hidden;
-box-sizing: border-box;
-/*background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);*/
-background-image: linear-gradient(to bottom, rgba(255, 0, 127, 0.4), rgba(0, 0, 255, 0.4), rgba(79, 250, 216, 0.4), rgba(205, 254, 0, 0.4)); /*pink and blue*/
-width: 100vw;
-height:100vh;
-display: inline-block;
-position: fixed;
-background-size: 200% 200%;
+  text-align: left;
+  font-family: 'Karla';
+  color: #00f;
+  cursor: url(cursor_triangle.png), auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  /*background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);*/
+  background-image: linear-gradient(to bottom, #fee9ff, white, #eac6c8, white); /*pink and blue*/
+  width: 100vw;
+  height:100vh;
+  display: inline-block;
+  position: fixed;
+  background-size: 200% 200%;
 
--webkit-animation: changeGradient 12s ease-in-out infinite;
--moz-animation: changeGradient 12s ease-in-out infinite;
-animation: changeGradient 12s ease-in-out infinite;
+  -webkit-animation: changeGradient 12s ease-in-out infinite;
+  -moz-animation: changeGradient 12s ease-in-out infinite;
+  animation: changeGradient 12s ease-in-out infinite;
 }
 
 @-webkit-keyframes changeGradient {
@@ -46,15 +46,15 @@ animation: changeGradient 12s ease-in-out infinite;
 /* -----------------------------------------Title*/
 
 .Title {
-  font-family: 'Poppins';
-  left: 41.5vw;
+  font-family: 'Karla';
+  left: 30vw;
   font-weight: 600;
-  color: #00f;
+  color: blue;
   display: block;
   position: fixed;
-  line-height: 10vh;
+  line-height: 15vh;
   vertical-align: middle;
-  font-size: 5.4em;
+  font-size: 8em;
   z-index: 100;
   top: 2vh;
   margin: 0 auto;
@@ -98,13 +98,13 @@ opacity: 0;
 .Item  {
   height: auto;
   font-size: 1em;
-  line-height: 2em;
+  line-height: 1em;
   display: inline-block;
   position: relative;
 }
 
 .player > iframe{
-   box-shadow: 3px 3px 50px 0px #FF007F; 
+   box-shadow: 3px 30px 100px 5px #FF007F; 
 }
 
 .ItemDetails, .ItemType {
@@ -112,7 +112,7 @@ opacity: 0;
   position: absolute;
   left: 0.5vw;
   top: 1vh;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1em;
 }
 
@@ -139,8 +139,8 @@ opacity: 0;
 .corner {
   display: block;
   position: absolute;
-  height: 10vh;
-  width: 9vw;
+  height: 30vh;
+  width: 30vw;
   right: 0;
   top: 0;
   /*border: 1px solid red;*/
@@ -175,8 +175,8 @@ opacity: 0;
 .hvr-curl-top-right:hover:before, 
 .hvr-curl-top-right:focus:before, 
 .hvr-curl-top-right:active:before {
-  width: 25px;
-  height: 25px;
+  width: 200px;
+  height: 200px;
 }
 
 
@@ -184,13 +184,13 @@ opacity: 0;
 
 /* -----------------------------------------Anxiety*/
 
-.ImagesAnxiety {
+/*.ImagesAnxiety {
   animation: moveAround 0.1s linear infinite;
 }
 
 .ImagesNoAnxiety {
   animation: none;
-}
+}*/
 
 
 @-webkit-keyframes moveAround {
@@ -260,18 +260,20 @@ opacity: 0;
   display: inline-block;
 }
 
+/*rgba(255,0,135,.50)  #00f FF007F
+*/
 .Project > img {
-  box-shadow: 3px 3px 50px 0px #FF007F;
+  box-shadow: 1px 9px 50px 10px rgba(255,100,200,.75);
   pointer-events: none;
 }
 
 .Project > .ItemDetails{
   display: inline-block;
-  color: #FF007F;
+  color: blue;
 }
 .Project > .ItemType {
   width: 30vw;
-  color: #FF007F;
+  color: blue;
 }
 
 .Research {
@@ -284,18 +286,18 @@ opacity: 0;
 }
 
 .Research  > img {
-	box-shadow: 3px 3px 50px 0px #00f;
+	box-shadow: 3px 3px 50px 0px rgba(93,111,216,.75);
   width: 40vw;
   pointer-events: none;
 }
 
 .Research > .ItemDetails{
-  color: #00f;
+  color: blue;
   display: inline-block;
 }
 
 .Research >  .ItemType {
-  color: #00f;
+  color: blue;
 }
 
 .Instagram {
@@ -306,19 +308,19 @@ opacity: 0;
   top: -10vh;*/
 }
 .Instagram > img {
-	box-shadow: 3px 3px 50px 0px #cdfe00;
+	box-shadow: 3px 3px 50px 0px rgba(87,211,179,.75);
   width: 20em;
   pointer-events: none;
 }
 
 .Instagram > .ItemDetails {
   font-size: 1.4em;
-  color: #cdfe00;
+  color: blue;
 }
 
 .Instagram > .ItemType {
   font-size: 1.4em;
-  color: #cdfe00;
+  color: blue;
 }
 
 .Soundcloud {
@@ -341,7 +343,7 @@ opacity: 0;
 
 .Soundcloud > .player > iframe {
   cursor: url(cursor_drag.png), auto;
-  box-shadow: 3px 3px 50px 0px #4ffad8;
+  box-shadow: 3px 3px 50px 0px rgba(0,0,255,.50);
   pointer-events: none;
 }
 
@@ -365,7 +367,7 @@ opacity: 0;
 
 .ProjectItem > img {
   width: 70vw;
-  box-shadow: 3px 3px 50px 0px #00f;
+  box-shadow: 3px 3px 50px 0px rgba(255,100,200,.75);
 }
 
 
