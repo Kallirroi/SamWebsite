@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+/*@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 @import url('https://fonts.googleapis.com/css?family=Cousine:400,700|El+Messiri:400,500,600,700|Federo|Marmelad|Nunito+Sans:400,600,700,800|Philosopher:400,700|Poppins:400,500,600,700|Tenor+Sans|Yatra+One:400|Space+Mono:400+600');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');*/
+@font-face { font-family: PxVectorSamtous; src: url('https://dl.dropbox.com/s/teabyzwnx4zfihw/PxVectorSamtous.otf');}
+@font-face { font-family: Agipo; src: url('https://dl.dropbox.com/s/jg2i8q39chfuq37/agipo.ttf');}
+
+
 
 .App {
   text-align: left;
-  font-family: 'Karla';
+  font-family: 'Times New Roman';
   color: #00f;
   cursor: url(cursor_triangle.png), auto;
   overflow-x: hidden;
   box-sizing: border-box;
-  /*background: linear-gradient(to bottom, #d8fffa, #ffedfe, #f9ffed, #e2fffe);*/
-  background-image: linear-gradient(to bottom, #fee9ff, white, #eac6c8, white); /*pink and blue*/
+  background: linear-gradient(to bottom, #000000, #7f7f7f, #ffffff, #000000);
+  /*background-image: linear-gradient(to bottom, #fee9ff, white, #eac6c8, white); /*pink and blue*/ 
   width: 100vw;
   height:100vh;
   display: inline-block;
@@ -46,35 +51,77 @@
 /* -----------------------------------------Title*/
 
 .Title {
-  font-family: 'Karla';
-  left: 30vw;
-  font-weight: 600;
+/*  border-bottom: 3px solid currentColor;
+*/  display: inline-block;
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
+  left: 1vw;
+  font-weight: 400;
   color: blue;
   display: block;
   position: fixed;
-  line-height: 15vh;
+  line-height: 4vh;
   vertical-align: middle;
-  font-size: 8em;
+  font-size: 3em;
+  z-index: 100;
+  top: 1vh;
+  margin: 0 auto;
+  letter-spacing: 0em;
+/*  text-decoration: underline;
+*/}
+
+.Title:hover {
+opacity: 0;
+}
+
+#noUnderline {
+  text-decoration: underline;
+}
+
+.Title > .Times {
+  left: 1vw;
+  font-family: 'Times New Roman';
+  color: black;
+  display: block;
+  font-weight: 400;
+  position: fixed;
+  line-height: 13vh;
+  vertical-align: middle;
+  font-size: 1em;
+  z-index: 100;
+  top: 1vh;
+  margin: 0 auto;
+  letter-spacing: 0em;
+
+}
+.Title > .noUnderline {
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
+  left: 0vw;
+  font-weight: 400;
+  color: blue;
+  display: block;
+  position: fixed;
+  line-height: 5vh;
+  vertical-align: middle;
+  font-size: 4em;
   z-index: 100;
   top: 2vh;
   margin: 0 auto;
   letter-spacing: 0em;
 }
-.Title:hover {
-opacity: 0;
-}
 
 
 /* -----------------------------------------Button*/
 .Button {
-  visibility: visible;	
+  visibility: visible;  
   position: fixed;
   left: 85vw;
   width: 3vw;
   color: #FF007F;
   text-align: center;
   top: 5vh;
-  background: url(button.png) center no-repeat;
+  background: url(button1.png) center no-repeat;
   cursor: url(cursor_triangle.png), auto;
   display: inline-block;
   line-height: 10vh;
@@ -105,19 +152,24 @@ opacity: 0;
 
 .player > iframe{
    box-shadow: 3px 30px 100px 5px #FF007F; 
+
 }
 
 .ItemDetails, .ItemType {
-  font-size: 2em;
+  font-size: 3em;
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
+  text-decoration: none;
   position: absolute;
-  left: 0.5vw;
-  top: 1vh;
+  left: 1vw;
+  top: 0vh;
   font-weight: 400;
   line-height: 1em;
+  display: block;
+
 }
 
 .ItemType {
-  top: 2vh;
+  top: 1.1vh;
 }
 
 
@@ -164,7 +216,7 @@ opacity: 0;
   right: 0;
   background: white;
   /* IE9 */
-  background: linear-gradient(225deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  background: linear-gradient(225deg, blue 45%, #aaa 50%, #ccc 56%, white 80%);
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.1s;
@@ -193,7 +245,7 @@ opacity: 0;
 }*/
 
 
-@-webkit-keyframes moveAround {
+/*@-webkit-keyframes moveAround {
 
   20.001% { 
     margin-left: 0.05vw; 
@@ -210,7 +262,7 @@ opacity: 0;
   64.999% { 
     margin-bottom: 0vh;
     } /* Turn back on */
-}
+/*}
 
 @-moz-keyframes moveAround {
   20.001% { 
@@ -228,7 +280,7 @@ opacity: 0;
   64.999% { 
     margin-bottom: 0vh;
     } /* Turn back on */
-  }
+  /*}
 
 @keyframes moveAround {
   20.001% { 
@@ -246,7 +298,7 @@ opacity: 0;
   64.999% { 
     margin-bottom: 0vh;
     } /* Turn back on */
-}
+/*}
 
 /* --------------------Specific types of home items*/
 
@@ -263,7 +315,7 @@ opacity: 0;
 /*rgba(255,0,135,.50)  #00f FF007F
 */
 .Project > img {
-  box-shadow: 1px 9px 50px 10px rgba(255,100,200,.75);
+  box-shadow: 1px 9px 50px 10px rgba(50, 50, 50, .8);
   pointer-events: none;
 }
 
@@ -272,7 +324,7 @@ opacity: 0;
   color: blue;
 }
 .Project > .ItemType {
-  width: 30vw;
+  width: 40vw;
   color: blue;
 }
 
@@ -286,7 +338,7 @@ opacity: 0;
 }
 
 .Research  > img {
-	box-shadow: 3px 3px 50px 0px rgba(93,111,216,.75);
+  box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, .8);
   width: 40vw;
   pointer-events: none;
 }
@@ -308,7 +360,7 @@ opacity: 0;
   top: -10vh;*/
 }
 .Instagram > img {
-	box-shadow: 3px 3px 50px 0px rgba(87,211,179,.75);
+  box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, .8);
   width: 20em;
   pointer-events: none;
 }
@@ -337,13 +389,13 @@ opacity: 0;
 }
 
 .Soundcloud > .player {
-	/*box-shadow: 3px 3px 50px 0px green;*/
+  /*box-shadow: 3px 3px 50px 0px green;*/
   width: 20vw;
 }
 
 .Soundcloud > .player > iframe {
   cursor: url(cursor_drag.png), auto;
-  box-shadow: 3px 3px 50px 0px rgba(0,0,255,.50);
+  box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, .8);
   pointer-events: none;
 }
 
@@ -363,25 +415,63 @@ opacity: 0;
   /* vertical spacing on the project-specific pages most likely to be defined by this variable*/
   margin-bottom: 10vh;
   left: 12vw;
+/*  line-height: 2em;
+*/
 }
 
 .ProjectItem > img {
   width: 70vw;
-  box-shadow: 3px 3px 50px 0px rgba(255,100,200,.75);
+
+  box-shadow: 3px 3px 50px 0px rgba(50,50,50,.8);
 }
 
 
 /*this is the text in the project-specific page */
+
 .ProjectItemDetails, .ProjectItemIntro {
-  font-size: 2em;
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
+  font-size: 3em;
+  position: relative;
+  left: -12vw;
+  top: 0;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  width: 20em;
+  line-height: 1em;
+}
+
+.ProjectItemDetails-Title {
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
+  text-decoration: underline;
+  font-size: 3em;
   position: relative;
   left: 0vw;
   top: 0;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   margin-top: 1vh;
   width: 20em;
+  line-height: 1em;
+
 }
 
+#noUnderline {
+  text-decoration: underline;
+}
+
+
+.ProjectItemDetails-Link{
+  font-family: 'Times New Roman';
+  font-size: 1em;
+  position: relative;
+  left: 0vw;
+  top: 0;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  width: 20em;
+  line-height: 1em;
+  text-decoration: underline;
+
+}
 .ProjectItemIntroIsHidden {
   visibility: hidden;
 }
@@ -394,7 +484,7 @@ opacity: 0;
 /* this is styling the google sheet (if any) in the project-specific page*/
 .Doc {
   margin-bottom: 10vh;
-  box-shadow: 3px 3px 50px 0px #00f;
+  box-shadow: 3px 3px 50px 0px rgba(50, 50, 50, .8);
 
 }
 
@@ -410,7 +500,7 @@ opacity: 0;
 .HomeData, .ProjectData {
   position: absolute;
   top: 10em;
-  margin-left: 2vw;
+  margin-left: 1vw;
   margin-bottom: 5vh;
 }
 
@@ -434,9 +524,10 @@ opacity: 0;
 .Footer {
   display: inline-block;
   font-size: 0.9em;
+  font-family: 'PxVectorSamtous', 'Agipo', 'Arial';
   position: fixed;
   top: 97vh;
-  left: 90vw;
+  left: 85vw;
   height: 2em;
   vertical-align: center;
   color: #222;
@@ -444,7 +535,7 @@ opacity: 0;
 }
 
 .Footer > a{
-  color: #999;
+  color: blue;
   text-decoration: none;
   font-weight: 700;
 }

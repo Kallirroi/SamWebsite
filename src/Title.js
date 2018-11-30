@@ -6,7 +6,8 @@ class Title extends React.Component {
 	render() {
 		return (
 		        <div className={["ImagesAnxiety", "Title"].join(' ')} > 
-		        	/Archive
+		        ›<span id="noUnderline">Recent Preoccupations</span> 
+		        	<p className="Times"> •Updated Fall 2018 </p>
 		        </div>
 	    )
 	}

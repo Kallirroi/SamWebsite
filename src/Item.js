@@ -44,15 +44,9 @@ class Item extends React.Component {
 		        	<img src={this.props.imageURL} role="presentation" className={this.props.imagesAnxiety}/>
 		        	<div className="corner hvr-curl-top-right" onClick={this.showDetails} ></div>
 		        	<div className={classNameItemType}>  
-		        		<p>{this.props.name} </p>
-		        		<p>{this.props.type} </p>
+		        		›<span id="noUnderline">{this.props.name}</span>
 		        	</div>
-		        	<div className={classNameItemDetails} > 
-		        		{this.props.details1}<br/><br/>
-	        			{this.props.details2}<br/><br/>
-	        			{this.props.details3}<br/><br/>
-	        			{this.props.details4}        			
-		        	</div> 	        	
+
 		        </div>
 	        </Draggable>
 	    )
